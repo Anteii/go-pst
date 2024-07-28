@@ -78,19 +78,19 @@ message Contact {
   optional string fax1_address_type = 45; // @gotags: msg:"26249831,omitempty"
   // Contains a user-readable display name, followed by the "@" character, followed by a fax number.
   optional string fax1_email_address = 46; // @gotags: msg:"26249931,omitempty"
-  // Contains the same value as the PidTagNormalizedSubject property (section 2.812).
+  // Contains the same value as the PidTagNormalizedSubject property (section 2.813).
   optional string fax1_original_display_name = 47; // @gotags: msg:"26250031,omitempty"
   // Contains the string value "FAX".
   optional string fax2_address_type = 49; // @gotags: msg:"26253031,omitempty"
   // Contains a user-readable display name, followed by the "@" character, followed by a fax number.
   optional string fax2_email_address = 50; // @gotags: msg:"26253131,omitempty"
-  // Contains the same value as the PidTagNormalizedSubject property (section 2.812).
+  // Contains the same value as the PidTagNormalizedSubject property (section 2.813).
   optional string fax2_original_display_name = 51; // @gotags: msg:"26253231,omitempty"
   // Contains the string value "FAX".
   optional string fax3_address_type = 53; // @gotags: msg:"26256231,omitempty"
   // Contains a user-readable display name, followed by the "@" character, followed by a fax number.
   optional string fax3_email_address = 54; // @gotags: msg:"26256331,omitempty"
-  // Contains the same value as the PidTagNormalizedSubject property (section 2.812).
+  // Contains the same value as the PidTagNormalizedSubject property (section 2.813).
   optional string fax3_original_display_name = 55; // @gotags: msg:"26256431,omitempty"
   // Specifies the name under which to file a contact when displaying a list of contacts.
   optional string file_under = 57; // @gotags: msg:"26214931,omitempty"

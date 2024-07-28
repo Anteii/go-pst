@@ -84,15 +84,15 @@ message AddressBook {
   optional string address_book_object_distinguished_name = 43; // @gotags: msg:"3282831,omitempty"
   // Contains the DN of the Organization object of the mail user's organization.
   optional string address_book_organizational_unit_root_distinguished_name = 45; // @gotags: msg:"3600831,omitempty"
-  // Contains the phonetic representation of the PidTagCompanyName property (section 2.639).
+  // Contains the phonetic representation of the PidTagCompanyName property (section 2.640).
   optional string address_book_phonetic_company_name = 49; // @gotags: msg:"3598531,omitempty"
-  // Contains the phonetic representation of the PidTagDepartmentName property (section 2.672).
+  // Contains the phonetic representation of the PidTagDepartmentName property (section 2.673).
   optional string address_book_phonetic_department_name = 50; // @gotags: msg:"3598431,omitempty"
-  // Contains the phonetic representation of the PidTagDisplayName property (section 2.676).
+  // Contains the phonetic representation of the PidTagDisplayName property (section 2.677).
   optional string address_book_phonetic_display_name = 51; // @gotags: msg:"3598631,omitempty"
-  // Contains the phonetic representation of the PidTagGivenName property (section 2.714).
+  // Contains the phonetic representation of the PidTagGivenName property (section 2.715).
   optional string address_book_phonetic_given_name = 52; // @gotags: msg:"3598231,omitempty"
-  // Contains the phonetic representation of the PidTagSurname property (section 2.1036).
+  // Contains the phonetic representation of the PidTagSurname property (section 2.1037).
   optional string address_book_phonetic_surname = 53; // @gotags: msg:"3598331,omitempty"
   // Contains the maximum occupancy of the room.
   optional int32 address_book_room_capacity = 57; // @gotags: msg:"20553,omitempty"

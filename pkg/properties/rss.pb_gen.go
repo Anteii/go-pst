@@ -163,9 +163,10 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(7)
 	var zb0001Mask uint8 /* 7 bits */
+	_ = zb0001Mask
 	if z.PostRssChannel == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -202,7 +203,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// write "27136431"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -221,7 +222,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// write "27136031"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -240,7 +241,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// write "27136331"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -259,7 +260,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// write "2713623"
 		err = en.Append(0xa7, 0x32, 0x37, 0x31, 0x33, 0x36, 0x32, 0x33)
 		if err != nil {
@@ -278,7 +279,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// write "27136131"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -297,7 +298,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// write "27136531"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -316,7 +317,7 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// write "27136631"
 		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -341,9 +342,10 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(7)
 	var zb0001Mask uint8 /* 7 bits */
+	_ = zb0001Mask
 	if z.PostRssChannel == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -377,7 +379,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// string "27136431"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x34, 0x33, 0x31)
 		if z.PostRssChannel == nil {
@@ -386,7 +388,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostRssChannel)
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// string "27136031"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x30, 0x33, 0x31)
 		if z.PostRssChannelLink == nil {
@@ -395,7 +397,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostRssChannelLink)
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// string "27136331"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x33, 0x33, 0x31)
 		if z.PostRssItemGuid == nil {
@@ -404,7 +406,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostRssItemGuid)
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// string "2713623"
 		o = append(o, 0xa7, 0x32, 0x37, 0x31, 0x33, 0x36, 0x32, 0x33)
 		if z.PostRssItemHash == nil {
@@ -413,7 +415,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.PostRssItemHash)
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// string "27136131"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x31, 0x33, 0x31)
 		if z.PostRssItemLink == nil {
@@ -422,7 +424,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostRssItemLink)
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// string "27136531"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x35, 0x33, 0x31)
 		if z.PostRssItemXml == nil {
@@ -431,7 +433,7 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostRssItemXml)
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// string "27136631"
 		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x36, 0x33, 0x31)
 		if z.PostRssSubscription == nil {

@@ -127,9 +127,10 @@ func (z *Note) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(5)
 	var zb0001Mask uint8 /* 5 bits */
+	_ = zb0001Mask
 	if z.NoteColor == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -158,7 +159,7 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// write "2734083"
 		err = en.Append(0xa7, 0x32, 0x37, 0x33, 0x34, 0x30, 0x38, 0x33)
 		if err != nil {
@@ -177,7 +178,7 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// write "2734113"
 		err = en.Append(0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x31, 0x33)
 		if err != nil {
@@ -196,7 +197,7 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// write "2734103"
 		err = en.Append(0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x30, 0x33)
 		if err != nil {
@@ -215,7 +216,7 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// write "2734123"
 		err = en.Append(0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x32, 0x33)
 		if err != nil {
@@ -234,7 +235,7 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// write "2734133"
 		err = en.Append(0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x33, 0x33)
 		if err != nil {
@@ -259,9 +260,10 @@ func (z *Note) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(5)
 	var zb0001Mask uint8 /* 5 bits */
+	_ = zb0001Mask
 	if z.NoteColor == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -287,7 +289,7 @@ func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// string "2734083"
 		o = append(o, 0xa7, 0x32, 0x37, 0x33, 0x34, 0x30, 0x38, 0x33)
 		if z.NoteColor == nil {
@@ -296,7 +298,7 @@ func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NoteColor)
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// string "2734113"
 		o = append(o, 0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x31, 0x33)
 		if z.NoteHeight == nil {
@@ -305,7 +307,7 @@ func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NoteHeight)
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// string "2734103"
 		o = append(o, 0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x30, 0x33)
 		if z.NoteWidth == nil {
@@ -314,7 +316,7 @@ func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NoteWidth)
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// string "2734123"
 		o = append(o, 0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x32, 0x33)
 		if z.NoteX == nil {
@@ -323,7 +325,7 @@ func (z *Note) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NoteX)
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// string "2734133"
 		o = append(o, 0xa7, 0x32, 0x37, 0x33, 0x34, 0x31, 0x33, 0x33)
 		if z.NoteY == nil {

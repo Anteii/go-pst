@@ -74,7 +74,7 @@ message Appointment {
   optional int64 appointment_update_time = 31; // @gotags: msg:"26426264,omitempty"
   // Specifies the date and time at which the meeting-related object was sent.
   optional int64 attendee_critical_change = 32; // @gotags: msg:"164,omitempty"
-  // Indicates whether the value of the PidLidLocation property (section 2.159) is set to the PidTagDisplayName property (section 2.676).
+  // Indicates whether the value of the PidLidLocation property (section 2.159) is set to the PidTagDisplayName property (section 2.677).
   optional bool auto_fill_location = 33; // @gotags: msg:"26429811,omitempty"
   // Specifies whether to automatically start the conferencing application when a reminder for the start of a meeting is executed.
   optional bool auto_start_check = 34; // @gotags: msg:"26432411,omitempty"

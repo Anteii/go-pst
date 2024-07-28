@@ -1999,9 +1999,10 @@ func (z *Contact) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(109)
 	var zb0001Mask [2]uint64 /* 109 bits */
+	_ = zb0001Mask
 	if z.AddressBookProviderArrayType == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1
@@ -2438,7 +2439,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask[0] & 0x1) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1) == 0 { // if not omitted
 		// write "2622173"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x37, 0x33)
 		if err != nil {
@@ -2457,7 +2458,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2) == 0 { // if not omitted
 		// write "26257331"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -2476,7 +2477,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4) == 0 { // if not omitted
 		// write "26221311"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x31, 0x33, 0x31, 0x31)
 		if err != nil {
@@ -2495,7 +2496,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8) == 0 { // if not omitted
 		// write "26257464"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x34, 0x36, 0x34)
 		if err != nil {
@@ -2514,7 +2515,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10) == 0 { // if not omitted
 		// write "2622113"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x31, 0x33)
 		if err != nil {
@@ -2533,7 +2534,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20) == 0 { // if not omitted
 		// write "26260072"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x36, 0x30, 0x30, 0x37, 0x32)
 		if err != nil {
@@ -2552,7 +2553,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40) == 0 { // if not omitted
 		// write "2625983"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x35, 0x39, 0x38, 0x33)
 		if err != nil {
@@ -2571,7 +2572,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80) == 0 { // if not omitted
 		// write "26752631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x37, 0x35, 0x32, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -2590,7 +2591,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100) == 0 { // if not omitted
 		// write "26228731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -2609,7 +2610,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200) == 0 { // if not omitted
 		// write "26230431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -2628,7 +2629,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400) == 0 { // if not omitted
 		// write "26230531"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -2647,7 +2648,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800) == 0 { // if not omitted
 		// write "26230631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -2666,7 +2667,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000) == 0 { // if not omitted
 		// write "26217631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x37, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -2685,7 +2686,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000) == 0 { // if not omitted
 		// write "2622843"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x32, 0x38, 0x34, 0x33)
 		if err != nil {
@@ -2704,7 +2705,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000) == 0 { // if not omitted
 		// write "26230731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -2723,7 +2724,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000) == 0 { // if not omitted
 		// write "26240231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -2742,7 +2743,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000) == 0 { // if not omitted
 		// write "26240031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -2761,7 +2762,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000) == 0 { // if not omitted
 		// write "26240331"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -2780,7 +2781,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000) == 0 { // if not omitted
 		// write "26240431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -2799,7 +2800,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000) == 0 { // if not omitted
 		// write "26243431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -2818,7 +2819,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000) == 0 { // if not omitted
 		// write "26243231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -2837,7 +2838,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000) == 0 { // if not omitted
 		// write "26243531"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -2856,7 +2857,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000) == 0 { // if not omitted
 		// write "26243631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -2875,7 +2876,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000) == 0 { // if not omitted
 		// write "26246631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -2894,7 +2895,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000) == 0 { // if not omitted
 		// write "26246431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -2913,7 +2914,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000) == 0 { // if not omitted
 		// write "26246731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -2932,7 +2933,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000) == 0 { // if not omitted
 		// write "26246831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -2951,7 +2952,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000) == 0 { // if not omitted
 		// write "26249831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x39, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -2970,7 +2971,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000) == 0 { // if not omitted
 		// write "26249931"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x34, 0x39, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -2989,7 +2990,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000) == 0 { // if not omitted
 		// write "26250031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x30, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3008,7 +3009,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
 		// write "26253031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3027,7 +3028,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
 		// write "26253131"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -3046,7 +3047,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
 		// write "26253231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3065,7 +3066,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
 		// write "26256231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3084,7 +3085,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
 		// write "26256331"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -3103,7 +3104,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
 		// write "26256431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -3122,7 +3123,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
 		// write "26214931"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x34, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -3141,7 +3142,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
 		// write "2621503"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x31, 0x35, 0x30, 0x33)
 		if err != nil {
@@ -3160,7 +3161,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
 		// write "26256831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3179,7 +3180,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
 		// write "26218111"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x31, 0x31, 0x31)
 		if err != nil {
@@ -3198,7 +3199,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
 		// write "26218631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3217,7 +3218,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
 		// write "26257031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3236,7 +3237,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
 		// write "26221931"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x31, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -3255,7 +3256,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
 		// write "26233831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x33, 0x33, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3274,7 +3275,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
 		// write "26259211"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x39, 0x32, 0x31, 0x31)
 		if err != nil {
@@ -3293,7 +3294,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
 		// write "26218831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3312,7 +3313,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
 		// write "26257231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3331,7 +3332,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
 		// write "2622103"
 		err = en.Append(0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x30, 0x33)
 		if err != nil {
@@ -3350,7 +3351,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
 		// write "26257564"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x35, 0x36, 0x34)
 		if err != nil {
@@ -3369,7 +3370,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
 		// write "26218731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -3388,7 +3389,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
 		// write "26227831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3407,7 +3408,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
 		// write "26228131"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -3426,7 +3427,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
 		// write "26257131"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -3445,7 +3446,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
 		// write "26228031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3464,7 +3465,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
 		// write "26228231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3483,7 +3484,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
 		// write "26227931"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -3502,7 +3503,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
 		// write "26227731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -3521,7 +3522,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
 		// write "26222231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3540,7 +3541,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
 		// write "26222031"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3559,7 +3560,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
 		// write "26222131"
 		err = en.Append(0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -3612,7 +3613,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			return
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
 		// write "1491464"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x34, 0x36, 0x34)
 		if err != nil {
@@ -3631,7 +3632,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
 		// write "1487531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -3650,7 +3651,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
 		// write "1488431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -3669,7 +3670,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
 		// write "1492931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -3688,7 +3689,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
 		// write "1485631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3707,7 +3708,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
 		// write "1485031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3726,7 +3727,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
 		// write "1487831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3745,7 +3746,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
 		// write "1493531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x33, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -3764,7 +3765,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
 		// write "1487031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -3783,7 +3784,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
 		// write "1492131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -3802,7 +3803,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
 		// write "1488631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3821,7 +3822,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
 		// write "1492231"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3840,7 +3841,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
 		// write "1487231"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3859,7 +3860,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
 		// write "1491731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -3878,7 +3879,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
 		// write "1492431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -3897,7 +3898,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
 		// write "149252"
 		err = en.Append(0xa6, 0x31, 0x34, 0x39, 0x32, 0x35, 0x32)
 		if err != nil {
@@ -3916,7 +3917,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
 		// write "1485331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -3935,7 +3936,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
 		// write "1485431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -3954,7 +3955,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
 		// write "1485531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -3973,7 +3974,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
 		// write "1491531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -3992,7 +3993,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
 		// write "1489531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4011,7 +4012,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
 		// write "1493731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x33, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4030,7 +4031,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
 		// write "1493831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x33, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -4049,7 +4050,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
 		// write "1493931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x33, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4068,7 +4069,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
 		// write "1494231"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -4087,7 +4088,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
 		// write "1494031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -4106,7 +4107,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
 		// write "1494131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -4125,7 +4126,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
 		// write "1488531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4144,7 +4145,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
 		// write "1485731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4163,7 +4164,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
 		// write "3178011"
 		err = en.Append(0xa7, 0x33, 0x31, 0x37, 0x38, 0x30, 0x31, 0x31)
 		if err != nil {
@@ -4182,7 +4183,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
 		// write "1492831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -4201,7 +4202,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
 		// write "1486931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4220,7 +4221,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
 		// write "1489031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -4239,7 +4240,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
 		// write "1489131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -4258,7 +4259,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
 		// write "1488331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4277,7 +4278,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
 		// write "1487431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -4296,7 +4297,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
 		// write "1491831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -4315,7 +4316,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
 		// write "1487731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4334,7 +4335,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
 		// write "1491931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4353,7 +4354,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
 		// write "1492031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -4372,7 +4373,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
 		// write "1488831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -4391,7 +4392,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
 		// write "1488931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4410,7 +4411,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
 		// write "1486531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4429,7 +4430,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
 		// write "1492331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4448,7 +4449,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
 		// write "1489231"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -4467,7 +4468,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
 		// write "1487131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -4486,7 +4487,7 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
 		// write "1491364"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x33, 0x36, 0x34)
 		if err != nil {
@@ -4511,9 +4512,10 @@ func (z *Contact) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(109)
 	var zb0001Mask [2]uint64 /* 109 bits */
+	_ = zb0001Mask
 	if z.AddressBookProviderArrayType == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1
@@ -4947,7 +4949,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask[0] & 0x1) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1) == 0 { // if not omitted
 		// string "2622173"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x37, 0x33)
 		if z.AddressBookProviderArrayType == nil {
@@ -4956,7 +4958,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.AddressBookProviderArrayType)
 		}
 	}
-	if (zb0001Mask[0] & 0x2) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2) == 0 { // if not omitted
 		// string "26257331"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x33, 0x33, 0x31)
 		if z.AddressCountryCode == nil {
@@ -4965,7 +4967,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.AddressCountryCode)
 		}
 	}
-	if (zb0001Mask[0] & 0x4) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4) == 0 { // if not omitted
 		// string "26221311"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x31, 0x33, 0x31, 0x31)
 		if z.AutoLog == nil {
@@ -4974,7 +4976,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.AutoLog)
 		}
 	}
-	if (zb0001Mask[0] & 0x8) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8) == 0 { // if not omitted
 		// string "26257464"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x34, 0x36, 0x34)
 		if z.BirthdayLocal == nil {
@@ -4983,7 +4985,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.BirthdayLocal)
 		}
 	}
-	if (zb0001Mask[0] & 0x10) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10) == 0 { // if not omitted
 		// string "2622113"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x31, 0x33)
 		if z.ContactCharacterSet == nil {
@@ -4992,7 +4994,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.ContactCharacterSet)
 		}
 	}
-	if (zb0001Mask[0] & 0x20) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20) == 0 { // if not omitted
 		// string "26260072"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x36, 0x30, 0x30, 0x37, 0x32)
 		if z.ContactLinkGlobalAddressListLinkId == nil {
@@ -5001,7 +5003,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendUint64(o, *z.ContactLinkGlobalAddressListLinkId)
 		}
 	}
-	if (zb0001Mask[0] & 0x40) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40) == 0 { // if not omitted
 		// string "2625983"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x35, 0x39, 0x38, 0x33)
 		if z.ContactLinkGlobalAddressListLinkState == nil {
@@ -5010,7 +5012,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.ContactLinkGlobalAddressListLinkState)
 		}
 	}
-	if (zb0001Mask[0] & 0x80) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80) == 0 { // if not omitted
 		// string "26752631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x37, 0x35, 0x32, 0x36, 0x33, 0x31)
 		if z.ContactLinkName == nil {
@@ -5019,7 +5021,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ContactLinkName)
 		}
 	}
-	if (zb0001Mask[0] & 0x100) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100) == 0 { // if not omitted
 		// string "26228731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x37, 0x33, 0x31)
 		if z.ContactUserField1 == nil {
@@ -5028,7 +5030,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ContactUserField1)
 		}
 	}
-	if (zb0001Mask[0] & 0x200) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200) == 0 { // if not omitted
 		// string "26230431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x34, 0x33, 0x31)
 		if z.ContactUserField2 == nil {
@@ -5037,7 +5039,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ContactUserField2)
 		}
 	}
-	if (zb0001Mask[0] & 0x400) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400) == 0 { // if not omitted
 		// string "26230531"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x35, 0x33, 0x31)
 		if z.ContactUserField3 == nil {
@@ -5046,7 +5048,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ContactUserField3)
 		}
 	}
-	if (zb0001Mask[0] & 0x800) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800) == 0 { // if not omitted
 		// string "26230631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x36, 0x33, 0x31)
 		if z.ContactUserField4 == nil {
@@ -5055,7 +5057,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ContactUserField4)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000) == 0 { // if not omitted
 		// string "26217631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x37, 0x36, 0x33, 0x31)
 		if z.Department == nil {
@@ -5064,7 +5066,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Department)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000) == 0 { // if not omitted
 		// string "2622843"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x32, 0x38, 0x34, 0x33)
 		if z.DistributionListChecksum == nil {
@@ -5073,7 +5075,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.DistributionListChecksum)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000) == 0 { // if not omitted
 		// string "26230731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x33, 0x30, 0x37, 0x33, 0x31)
 		if z.DistributionListName == nil {
@@ -5082,7 +5084,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DistributionListName)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000) == 0 { // if not omitted
 		// string "26240231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x32, 0x33, 0x31)
 		if z.Email1AddressType == nil {
@@ -5091,7 +5093,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email1AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000) == 0 { // if not omitted
 		// string "26240031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x30, 0x33, 0x31)
 		if z.Email1DisplayName == nil {
@@ -5100,7 +5102,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email1DisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000) == 0 { // if not omitted
 		// string "26240331"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x33, 0x33, 0x31)
 		if z.Email1EmailAddress == nil {
@@ -5109,7 +5111,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email1EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000) == 0 { // if not omitted
 		// string "26240431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x30, 0x34, 0x33, 0x31)
 		if z.Email1OriginalDisplayName == nil {
@@ -5118,7 +5120,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email1OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000) == 0 { // if not omitted
 		// string "26243431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x34, 0x33, 0x31)
 		if z.Email2AddressType == nil {
@@ -5127,7 +5129,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email2AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000) == 0 { // if not omitted
 		// string "26243231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x32, 0x33, 0x31)
 		if z.Email2DisplayName == nil {
@@ -5136,7 +5138,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email2DisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000) == 0 { // if not omitted
 		// string "26243531"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x35, 0x33, 0x31)
 		if z.Email2EmailAddress == nil {
@@ -5145,7 +5147,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email2EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000) == 0 { // if not omitted
 		// string "26243631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x33, 0x36, 0x33, 0x31)
 		if z.Email2OriginalDisplayName == nil {
@@ -5154,7 +5156,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email2OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000) == 0 { // if not omitted
 		// string "26246631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x36, 0x33, 0x31)
 		if z.Email3AddressType == nil {
@@ -5163,7 +5165,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email3AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000) == 0 { // if not omitted
 		// string "26246431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x34, 0x33, 0x31)
 		if z.Email3DisplayName == nil {
@@ -5172,7 +5174,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email3DisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000) == 0 { // if not omitted
 		// string "26246731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x37, 0x33, 0x31)
 		if z.Email3EmailAddress == nil {
@@ -5181,7 +5183,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email3EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000) == 0 { // if not omitted
 		// string "26246831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x36, 0x38, 0x33, 0x31)
 		if z.Email3OriginalDisplayName == nil {
@@ -5190,7 +5192,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Email3OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000) == 0 { // if not omitted
 		// string "26249831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x39, 0x38, 0x33, 0x31)
 		if z.Fax1AddressType == nil {
@@ -5199,7 +5201,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax1AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000) == 0 { // if not omitted
 		// string "26249931"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x34, 0x39, 0x39, 0x33, 0x31)
 		if z.Fax1EmailAddress == nil {
@@ -5208,7 +5210,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax1EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000) == 0 { // if not omitted
 		// string "26250031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x30, 0x30, 0x33, 0x31)
 		if z.Fax1OriginalDisplayName == nil {
@@ -5217,7 +5219,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax1OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
 		// string "26253031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x30, 0x33, 0x31)
 		if z.Fax2AddressType == nil {
@@ -5226,7 +5228,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax2AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
 		// string "26253131"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x31, 0x33, 0x31)
 		if z.Fax2EmailAddress == nil {
@@ -5235,7 +5237,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax2EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
 		// string "26253231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x33, 0x32, 0x33, 0x31)
 		if z.Fax2OriginalDisplayName == nil {
@@ -5244,7 +5246,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax2OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
 		// string "26256231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x32, 0x33, 0x31)
 		if z.Fax3AddressType == nil {
@@ -5253,7 +5255,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax3AddressType)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
 		// string "26256331"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x33, 0x33, 0x31)
 		if z.Fax3EmailAddress == nil {
@@ -5262,7 +5264,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax3EmailAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
 		// string "26256431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x34, 0x33, 0x31)
 		if z.Fax3OriginalDisplayName == nil {
@@ -5271,7 +5273,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Fax3OriginalDisplayName)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
 		// string "26214931"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x34, 0x39, 0x33, 0x31)
 		if z.FileUnder == nil {
@@ -5280,7 +5282,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.FileUnder)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
 		// string "2621503"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x31, 0x35, 0x30, 0x33)
 		if z.FileUnderId == nil {
@@ -5289,7 +5291,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.FileUnderId)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
 		// string "26256831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x36, 0x38, 0x33, 0x31)
 		if z.FreeBusyLocation == nil {
@@ -5298,7 +5300,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.FreeBusyLocation)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
 		// string "26218111"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x31, 0x31, 0x31)
 		if z.HasPicture == nil {
@@ -5307,7 +5309,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.HasPicture)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
 		// string "26218631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x36, 0x33, 0x31)
 		if z.HomeAddress == nil {
@@ -5316,7 +5318,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
 		// string "26257031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x30, 0x33, 0x31)
 		if z.HomeAddressCountryCode == nil {
@@ -5325,7 +5327,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressCountryCode)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
 		// string "26221931"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x31, 0x39, 0x33, 0x31)
 		if z.Html == nil {
@@ -5334,7 +5336,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Html)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
 		// string "26233831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x33, 0x33, 0x38, 0x33, 0x31)
 		if z.InstantMessagingAddress == nil {
@@ -5343,7 +5345,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.InstantMessagingAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
 		// string "26259211"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x39, 0x32, 0x31, 0x31)
 		if z.IsContactLinked == nil {
@@ -5352,7 +5354,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.IsContactLinked)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
 		// string "26218831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x38, 0x33, 0x31)
 		if z.OtherAddress == nil {
@@ -5361,7 +5363,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
 		// string "26257231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x32, 0x33, 0x31)
 		if z.OtherAddressCountryCode == nil {
@@ -5370,7 +5372,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressCountryCode)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
 		// string "2622103"
 		o = append(o, 0xa7, 0x32, 0x36, 0x32, 0x32, 0x31, 0x30, 0x33)
 		if z.PostalAddressId == nil {
@@ -5379,7 +5381,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.PostalAddressId)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
 		// string "26257564"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x35, 0x36, 0x34)
 		if z.WeddingAnniversaryLocal == nil {
@@ -5388,7 +5390,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.WeddingAnniversaryLocal)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
 		// string "26218731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x31, 0x38, 0x37, 0x33, 0x31)
 		if z.WorkAddress == nil {
@@ -5397,7 +5399,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddress)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
 		// string "26227831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x38, 0x33, 0x31)
 		if z.WorkAddressCity == nil {
@@ -5406,7 +5408,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressCity)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
 		// string "26228131"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x31, 0x33, 0x31)
 		if z.WorkAddressCountry == nil {
@@ -5415,7 +5417,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressCountry)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
 		// string "26257131"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x35, 0x37, 0x31, 0x33, 0x31)
 		if z.WorkAddressCountryCode == nil {
@@ -5424,7 +5426,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressCountryCode)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
 		// string "26228031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x30, 0x33, 0x31)
 		if z.WorkAddressPostalCode == nil {
@@ -5433,7 +5435,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressPostalCode)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
 		// string "26228231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x38, 0x32, 0x33, 0x31)
 		if z.WorkAddressPostOfficeBox == nil {
@@ -5442,7 +5444,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressPostOfficeBox)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
 		// string "26227931"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x39, 0x33, 0x31)
 		if z.WorkAddressState == nil {
@@ -5451,7 +5453,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressState)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
 		// string "26227731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x37, 0x37, 0x33, 0x31)
 		if z.WorkAddressStreet == nil {
@@ -5460,7 +5462,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.WorkAddressStreet)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
 		// string "26222231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x32, 0x33, 0x31)
 		if z.YomiCompanyName == nil {
@@ -5469,7 +5471,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.YomiCompanyName)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
 		// string "26222031"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x30, 0x33, 0x31)
 		if z.YomiFirstName == nil {
@@ -5478,7 +5480,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.YomiFirstName)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
 		// string "26222131"
 		o = append(o, 0xa8, 0x32, 0x36, 0x32, 0x32, 0x32, 0x31, 0x33, 0x31)
 		if z.YomiLastName == nil {
@@ -5501,7 +5503,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 	} else {
 		o = msgp.AppendBool(o, *z.IsBirthdayContactWritable)
 	}
-	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
 		// string "1491464"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x34, 0x36, 0x34)
 		if z.Birthday == nil {
@@ -5510,7 +5512,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.Birthday)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not empty
+	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
 		// string "1487531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x35, 0x33, 0x31)
 		if z.Business2TelephoneNumber == nil {
@@ -5519,7 +5521,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Business2TelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x1) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
 		// string "1488431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x34, 0x33, 0x31)
 		if z.BusinessFaxNumber == nil {
@@ -5528,7 +5530,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.BusinessFaxNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x2) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
 		// string "1492931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x39, 0x33, 0x31)
 		if z.BusinessHomePage == nil {
@@ -5537,7 +5539,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.BusinessHomePage)
 		}
 	}
-	if (zb0001Mask[1] & 0x4) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
 		// string "1485631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x36, 0x33, 0x31)
 		if z.BusinessTelephoneNumber == nil {
@@ -5546,7 +5548,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.BusinessTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x8) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
 		// string "1485031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x30, 0x33, 0x31)
 		if z.CallbackTelephoneNumber == nil {
@@ -5555,7 +5557,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CallbackTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x10) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
 		// string "1487831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x38, 0x33, 0x31)
 		if z.CarTelephoneNumber == nil {
@@ -5564,7 +5566,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CarTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x20) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
 		// string "1493531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x33, 0x35, 0x33, 0x31)
 		if z.CompanyMainTelephoneNumber == nil {
@@ -5573,7 +5575,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CompanyMainTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x40) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
 		// string "1487031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x30, 0x33, 0x31)
 		if z.CompanyName == nil {
@@ -5582,7 +5584,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CompanyName)
 		}
 	}
-	if (zb0001Mask[1] & 0x80) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
 		// string "1492131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x31, 0x33, 0x31)
 		if z.ComputerNetworkName == nil {
@@ -5591,7 +5593,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ComputerNetworkName)
 		}
 	}
-	if (zb0001Mask[1] & 0x100) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
 		// string "1488631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x36, 0x33, 0x31)
 		if z.Country == nil {
@@ -5600,7 +5602,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Country)
 		}
 	}
-	if (zb0001Mask[1] & 0x200) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
 		// string "1492231"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x32, 0x33, 0x31)
 		if z.CustomerId == nil {
@@ -5609,7 +5611,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CustomerId)
 		}
 	}
-	if (zb0001Mask[1] & 0x400) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
 		// string "1487231"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x32, 0x33, 0x31)
 		if z.DepartmentName == nil {
@@ -5618,7 +5620,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DepartmentName)
 		}
 	}
-	if (zb0001Mask[1] & 0x800) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
 		// string "1491731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x37, 0x33, 0x31)
 		if z.DisplayNamePrefix == nil {
@@ -5627,7 +5629,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DisplayNamePrefix)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
 		// string "1492431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x34, 0x33, 0x31)
 		if z.FtpSite == nil {
@@ -5636,7 +5638,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.FtpSite)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
 		// string "149252"
 		o = append(o, 0xa6, 0x31, 0x34, 0x39, 0x32, 0x35, 0x32)
 		if z.Gender == nil {
@@ -5645,7 +5647,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.Gender)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
 		// string "1485331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x33, 0x33, 0x31)
 		if z.Generation == nil {
@@ -5654,7 +5656,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Generation)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
 		// string "1485431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x34, 0x33, 0x31)
 		if z.GivenName == nil {
@@ -5663,7 +5665,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.GivenName)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
 		// string "1485531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x35, 0x33, 0x31)
 		if z.GovernmentIdNumber == nil {
@@ -5672,7 +5674,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.GovernmentIdNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
 		// string "1491531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x35, 0x33, 0x31)
 		if z.Hobbies == nil {
@@ -5681,7 +5683,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Hobbies)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
 		// string "1489531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x35, 0x33, 0x31)
 		if z.Home2TelephoneNumber == nil {
@@ -5690,7 +5692,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Home2TelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
 		// string "1493731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x33, 0x37, 0x33, 0x31)
 		if z.HomeAddressCity == nil {
@@ -5699,7 +5701,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressCity)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
 		// string "1493831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x33, 0x38, 0x33, 0x31)
 		if z.HomeAddressCountry == nil {
@@ -5708,7 +5710,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressCountry)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
 		// string "1493931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x33, 0x39, 0x33, 0x31)
 		if z.HomeAddressPostalCode == nil {
@@ -5717,7 +5719,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressPostalCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
 		// string "1494231"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x32, 0x33, 0x31)
 		if z.HomeAddressPostOfficeBox == nil {
@@ -5726,7 +5728,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressPostOfficeBox)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
 		// string "1494031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x30, 0x33, 0x31)
 		if z.HomeAddressStateOrProvince == nil {
@@ -5735,7 +5737,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressStateOrProvince)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
 		// string "1494131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x31, 0x33, 0x31)
 		if z.HomeAddressStreet == nil {
@@ -5744,7 +5746,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeAddressStreet)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
 		// string "1488531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x35, 0x33, 0x31)
 		if z.HomeFaxNumber == nil {
@@ -5753,7 +5755,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeFaxNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
 		// string "1485731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x37, 0x33, 0x31)
 		if z.HomeTelephoneNumber == nil {
@@ -5762,7 +5764,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.HomeTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
 		// string "3178011"
 		o = append(o, 0xa7, 0x33, 0x31, 0x37, 0x38, 0x30, 0x31, 0x31)
 		if z.OscSyncEnabled == nil {
@@ -5771,7 +5773,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.OscSyncEnabled)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
 		// string "1492831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x38, 0x33, 0x31)
 		if z.PersonalHomePage == nil {
@@ -5780,7 +5782,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PersonalHomePage)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
 		// string "1486931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x39, 0x33, 0x31)
 		if z.PostalAddress == nil {
@@ -5789,7 +5791,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostalAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
 		// string "1489031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x30, 0x33, 0x31)
 		if z.PostalCode == nil {
@@ -5798,7 +5800,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostalCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
 		// string "1489131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x31, 0x33, 0x31)
 		if z.PostOfficeBox == nil {
@@ -5807,7 +5809,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PostOfficeBox)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
 		// string "1488331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x33, 0x33, 0x31)
 		if z.PrimaryFaxNumber == nil {
@@ -5816,7 +5818,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PrimaryFaxNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
 		// string "1487431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x34, 0x33, 0x31)
 		if z.PrimaryTelephoneNumber == nil {
@@ -5825,7 +5827,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PrimaryTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
 		// string "1491831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x38, 0x33, 0x31)
 		if z.Profession == nil {
@@ -5834,7 +5836,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Profession)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
 		// string "1487731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x37, 0x33, 0x31)
 		if z.RadioTelephoneNumber == nil {
@@ -5843,7 +5845,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.RadioTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
 		// string "1491931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x39, 0x33, 0x31)
 		if z.ReferredByName == nil {
@@ -5852,7 +5854,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReferredByName)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
 		// string "1492031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x30, 0x33, 0x31)
 		if z.SpouseName == nil {
@@ -5861,7 +5863,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SpouseName)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
 		// string "1488831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x38, 0x33, 0x31)
 		if z.StateOrProvince == nil {
@@ -5870,7 +5872,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.StateOrProvince)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
 		// string "1488931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x39, 0x33, 0x31)
 		if z.StreetAddress == nil {
@@ -5879,7 +5881,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.StreetAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
 		// string "1486531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x35, 0x33, 0x31)
 		if z.Surname == nil {
@@ -5888,7 +5890,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Surname)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
 		// string "1492331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x33, 0x33, 0x31)
 		if z.TelecommunicationsDeviceForDeafTelephoneNumber == nil {
@@ -5897,7 +5899,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TelecommunicationsDeviceForDeafTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
 		// string "1489231"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x32, 0x33, 0x31)
 		if z.TelexNumber == nil {
@@ -5906,7 +5908,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TelexNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
 		// string "1487131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x31, 0x33, 0x31)
 		if z.Title == nil {
@@ -5915,7 +5917,7 @@ func (z *Contact) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Title)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not empty
+	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
 		// string "1491364"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x33, 0x36, 0x34)
 		if z.WeddingAnniversary == nil {

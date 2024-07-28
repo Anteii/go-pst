@@ -289,9 +289,10 @@ func (z *Voicemail) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(14)
 	var zb0001Mask uint16 /* 14 bits */
+	_ = zb0001Mask
 	if z.CallId == nil {
 		zb0001Len--
 		zb0001Mask |= 0x100
@@ -460,7 +461,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			return
 		}
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// write "2663031"
 		err = en.Append(0xa7, 0x32, 0x36, 0x36, 0x33, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -479,7 +480,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// write "266283"
 		err = en.Append(0xa6, 0x32, 0x36, 0x36, 0x32, 0x38, 0x33)
 		if err != nil {
@@ -498,7 +499,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x400) == 0 { // if not empty
+	if (zb0001Mask & 0x400) == 0 { // if not omitted
 		// write "2662631"
 		err = en.Append(0xa7, 0x32, 0x36, 0x36, 0x32, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -517,7 +518,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x800) == 0 { // if not empty
+	if (zb0001Mask & 0x800) == 0 { // if not omitted
 		// write "2662931"
 		err = en.Append(0xa7, 0x32, 0x36, 0x36, 0x32, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -536,7 +537,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x1000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000) == 0 { // if not omitted
 		// write "266253"
 		err = en.Append(0xa6, 0x32, 0x36, 0x36, 0x32, 0x35, 0x33)
 		if err != nil {
@@ -555,7 +556,7 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000) == 0 { // if not omitted
 		// write "2662731"
 		err = en.Append(0xa7, 0x32, 0x36, 0x36, 0x32, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -580,9 +581,10 @@ func (z *Voicemail) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(14)
 	var zb0001Mask uint16 /* 14 bits */
+	_ = zb0001Mask
 	if z.CallId == nil {
 		zb0001Len--
 		zb0001Mask |= 0x100
@@ -668,7 +670,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 	} else {
 		o = msgp.AppendString(o, *z.XVoiceMessageSenderName)
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// string "2663031"
 		o = append(o, 0xa7, 0x32, 0x36, 0x36, 0x33, 0x30, 0x33, 0x31)
 		if z.CallId == nil {
@@ -677,7 +679,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CallId)
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// string "266283"
 		o = append(o, 0xa6, 0x32, 0x36, 0x36, 0x32, 0x38, 0x33)
 		if z.FaxNumberOfPages == nil {
@@ -686,7 +688,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.FaxNumberOfPages)
 		}
 	}
-	if (zb0001Mask & 0x400) == 0 { // if not empty
+	if (zb0001Mask & 0x400) == 0 { // if not omitted
 		// string "2662631"
 		o = append(o, 0xa7, 0x32, 0x36, 0x36, 0x32, 0x36, 0x33, 0x31)
 		if z.SenderTelephoneNumber == nil {
@@ -695,7 +697,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SenderTelephoneNumber)
 		}
 	}
-	if (zb0001Mask & 0x800) == 0 { // if not empty
+	if (zb0001Mask & 0x800) == 0 { // if not omitted
 		// string "2662931"
 		o = append(o, 0xa7, 0x32, 0x36, 0x36, 0x32, 0x39, 0x33, 0x31)
 		if z.VoiceMessageAttachmentOrder == nil {
@@ -704,7 +706,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.VoiceMessageAttachmentOrder)
 		}
 	}
-	if (zb0001Mask & 0x1000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000) == 0 { // if not omitted
 		// string "266253"
 		o = append(o, 0xa6, 0x32, 0x36, 0x36, 0x32, 0x35, 0x33)
 		if z.VoiceMessageDuration == nil {
@@ -713,7 +715,7 @@ func (z *Voicemail) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.VoiceMessageDuration)
 		}
 	}
-	if (zb0001Mask & 0x2000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000) == 0 { // if not omitted
 		// string "2662731"
 		o = append(o, 0xa7, 0x32, 0x36, 0x36, 0x32, 0x37, 0x33, 0x31)
 		if z.VoiceMessageSenderName == nil {

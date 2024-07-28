@@ -217,9 +217,10 @@ func (z *Journal) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(10)
 	var zb0001Mask uint16 /* 10 bits */
+	_ = zb0001Mask
 	if z.LogDocumentPosted == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -268,7 +269,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// write "26934511"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x35, 0x31, 0x31)
 		if err != nil {
@@ -287,7 +288,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// write "26932611"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x36, 0x31, 0x31)
 		if err != nil {
@@ -306,7 +307,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// write "26934411"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x34, 0x31, 0x31)
 		if err != nil {
@@ -325,7 +326,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// write "26932711"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x37, 0x31, 0x31)
 		if err != nil {
@@ -344,7 +345,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// write "2693193"
 		err = en.Append(0xa7, 0x32, 0x36, 0x39, 0x33, 0x31, 0x39, 0x33)
 		if err != nil {
@@ -363,7 +364,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// write "26932064"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x30, 0x36, 0x34)
 		if err != nil {
@@ -382,7 +383,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// write "2693243"
 		err = en.Append(0xa7, 0x32, 0x36, 0x39, 0x33, 0x32, 0x34, 0x33)
 		if err != nil {
@@ -401,7 +402,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x80) == 0 { // if not empty
+	if (zb0001Mask & 0x80) == 0 { // if not omitted
 		// write "26931864"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x31, 0x38, 0x36, 0x34)
 		if err != nil {
@@ -420,7 +421,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// write "26931231"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x31, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -439,7 +440,7 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// write "26934631"
 		err = en.Append(0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -464,9 +465,10 @@ func (z *Journal) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(10)
 	var zb0001Mask uint16 /* 10 bits */
+	_ = zb0001Mask
 	if z.LogDocumentPosted == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -512,7 +514,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// string "26934511"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x35, 0x31, 0x31)
 		if z.LogDocumentPosted == nil {
@@ -521,7 +523,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.LogDocumentPosted)
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// string "26932611"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x36, 0x31, 0x31)
 		if z.LogDocumentPrinted == nil {
@@ -530,7 +532,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.LogDocumentPrinted)
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// string "26934411"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x34, 0x31, 0x31)
 		if z.LogDocumentRouted == nil {
@@ -539,7 +541,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.LogDocumentRouted)
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// string "26932711"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x37, 0x31, 0x31)
 		if z.LogDocumentSaved == nil {
@@ -548,7 +550,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.LogDocumentSaved)
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// string "2693193"
 		o = append(o, 0xa7, 0x32, 0x36, 0x39, 0x33, 0x31, 0x39, 0x33)
 		if z.LogDuration == nil {
@@ -557,7 +559,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.LogDuration)
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// string "26932064"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x32, 0x30, 0x36, 0x34)
 		if z.LogEnd == nil {
@@ -566,7 +568,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.LogEnd)
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// string "2693243"
 		o = append(o, 0xa7, 0x32, 0x36, 0x39, 0x33, 0x32, 0x34, 0x33)
 		if z.LogFlags == nil {
@@ -575,7 +577,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.LogFlags)
 		}
 	}
-	if (zb0001Mask & 0x80) == 0 { // if not empty
+	if (zb0001Mask & 0x80) == 0 { // if not omitted
 		// string "26931864"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x31, 0x38, 0x36, 0x34)
 		if z.LogStart == nil {
@@ -584,7 +586,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.LogStart)
 		}
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// string "26931231"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x31, 0x32, 0x33, 0x31)
 		if z.LogType == nil {
@@ -593,7 +595,7 @@ func (z *Journal) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.LogType)
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// string "26934631"
 		o = append(o, 0xa8, 0x32, 0x36, 0x39, 0x33, 0x34, 0x36, 0x33, 0x31)
 		if z.LogTypeDesc == nil {

@@ -94,7 +94,7 @@ message Task {
   optional string to_do_sub_ordinal = 40; // @gotags: msg:"26758531,omitempty"
   // Contains user-specifiable text to identify this Message object in a consolidated to-do list.
   optional string to_do_title = 41; // @gotags: msg:"26758831,omitempty"
-  // Contains the value of the PidTagMessageDeliveryTime  property (section 2.789) when modifying the PidLidFlagRequest property (section 2.136).
+  // Contains the value of the PidTagMessageDeliveryTime  property (section 2.790) when modifying the PidLidFlagRequest property (section 2.136).
   optional int64 valid_flag_string_proof = 42; // @gotags: msg:"26763164,omitempty"
   // Contains a positive number whose negative is less than or equal to the value of the PidLidTaskOrdinal property (section 2.327) of all of the Task objects in the folder.
   optional int32 ordinal_most = 43; // @gotags: msg:"140503,omitempty"

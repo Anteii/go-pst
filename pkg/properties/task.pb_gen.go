@@ -739,9 +739,10 @@ func (z *Task) DecodeMsg(dc *msgp.Reader) (err error) {
 
 // EncodeMsg implements msgp.Encodable
 func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(39)
 	var zb0001Mask uint64 /* 39 bits */
+	_ = zb0001Mask
 	if z.FlagString == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -906,7 +907,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// write "2676483"
 		err = en.Append(0xa7, 0x32, 0x36, 0x37, 0x36, 0x34, 0x38, 0x33)
 		if err != nil {
@@ -925,7 +926,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// write "2631705"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x31, 0x37, 0x30, 0x35)
 		if err != nil {
@@ -944,7 +945,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// write "2632423"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x34, 0x32, 0x33)
 		if err != nil {
@@ -963,7 +964,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// write "26317611"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x36, 0x31, 0x31)
 		if err != nil {
@@ -982,7 +983,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// write "2632003"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x30, 0x33)
 		if err != nil {
@@ -1001,7 +1002,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// write "26323331"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -1020,7 +1021,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// write "26321211"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x32, 0x31, 0x31)
 		if err != nil {
@@ -1039,7 +1040,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x80) == 0 { // if not empty
+	if (zb0001Mask & 0x80) == 0 { // if not omitted
 		// write "2632733"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x37, 0x33, 0x33)
 		if err != nil {
@@ -1058,7 +1059,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// write "26318364"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x38, 0x33, 0x36, 0x34)
 		if err != nil {
@@ -1077,7 +1078,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// write "26317711"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x37, 0x31, 0x31)
 		if err != nil {
@@ -1096,7 +1097,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x400) == 0 { // if not empty
+	if (zb0001Mask & 0x400) == 0 { // if not omitted
 		// write "26317364"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x33, 0x36, 0x34)
 		if err != nil {
@@ -1115,7 +1116,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x800) == 0 { // if not empty
+	if (zb0001Mask & 0x800) == 0 { // if not omitted
 		// write "2632013"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x31, 0x33)
 		if err != nil {
@@ -1134,7 +1135,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x1000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000) == 0 { // if not omitted
 		// write "26321411"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x34, 0x31, 0x31)
 		if err != nil {
@@ -1153,7 +1154,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000) == 0 { // if not omitted
 		// write "26324411"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x34, 0x34, 0x31, 0x31)
 		if err != nil {
@@ -1172,7 +1173,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000) == 0 { // if not omitted
 		// write "26323811"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x38, 0x31, 0x31)
 		if err != nil {
@@ -1191,7 +1192,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8000) == 0 { // if not empty
+	if (zb0001Mask & 0x8000) == 0 { // if not omitted
 		// write "2632103"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x31, 0x30, 0x33)
 		if err != nil {
@@ -1210,7 +1211,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10000) == 0 { // if not empty
+	if (zb0001Mask & 0x10000) == 0 { // if not omitted
 		// write "26323731"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -1229,7 +1230,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x20000) == 0 { // if not empty
+	if (zb0001Mask & 0x20000) == 0 { // if not omitted
 		// write "26320564"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x30, 0x35, 0x36, 0x34)
 		if err != nil {
@@ -1248,7 +1249,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x40000) == 0 { // if not empty
+	if (zb0001Mask & 0x40000) == 0 { // if not omitted
 		// write "26323431"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -1267,7 +1268,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x80000) == 0 { // if not empty
+	if (zb0001Mask & 0x80000) == 0 { // if not omitted
 		// write "2673043"
 		err = en.Append(0xa7, 0x32, 0x36, 0x37, 0x33, 0x30, 0x34, 0x33)
 		if err != nil {
@@ -1286,7 +1287,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x100000) == 0 { // if not empty
+	if (zb0001Mask & 0x100000) == 0 { // if not omitted
 		// write "2632323"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x33, 0x32, 0x33)
 		if err != nil {
@@ -1305,7 +1306,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x200000) == 0 { // if not empty
+	if (zb0001Mask & 0x200000) == 0 { // if not omitted
 		// write "26323611"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x36, 0x31, 0x31)
 		if err != nil {
@@ -1324,7 +1325,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x400000) == 0 { // if not empty
+	if (zb0001Mask & 0x400000) == 0 { // if not omitted
 		// write "2632353"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x33, 0x35, 0x33)
 		if err != nil {
@@ -1343,7 +1344,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x800000) == 0 { // if not empty
+	if (zb0001Mask & 0x800000) == 0 { // if not omitted
 		// write "26321531"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -1362,7 +1363,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000000) == 0 { // if not omitted
 		// write "2632413"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x34, 0x31, 0x33)
 		if err != nil {
@@ -1381,7 +1382,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000000) == 0 { // if not omitted
 		// write "26317511"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x35, 0x31, 0x31)
 		if err != nil {
@@ -1400,7 +1401,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000000) == 0 { // if not omitted
 		// write "26323931"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -1419,7 +1420,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask & 0x8000000) == 0 { // if not omitted
 		// write "26317264"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x32, 0x36, 0x34)
 		if err != nil {
@@ -1438,7 +1439,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask & 0x10000000) == 0 { // if not omitted
 		// write "2632033"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x33, 0x33)
 		if err != nil {
@@ -1457,7 +1458,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask & 0x20000000) == 0 { // if not omitted
 		// write "2631693"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x31, 0x36, 0x39, 0x33)
 		if err != nil {
@@ -1476,7 +1477,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask & 0x40000000) == 0 { // if not omitted
 		// write "26320911"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x30, 0x39, 0x31, 0x31)
 		if err != nil {
@@ -1495,7 +1496,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask & 0x80000000) == 0 { // if not omitted
 		// write "26321111"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x31, 0x31, 0x31)
 		if err != nil {
@@ -1514,7 +1515,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask & 0x100000000) == 0 { // if not omitted
 		// write "2632023"
 		err = en.Append(0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x32, 0x33)
 		if err != nil {
@@ -1533,7 +1534,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask & 0x200000000) == 0 { // if not omitted
 		// write "26317111"
 		err = en.Append(0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x31, 0x31, 0x31)
 		if err != nil {
@@ -1552,7 +1553,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask & 0x400000000) == 0 { // if not omitted
 		// write "26758464"
 		err = en.Append(0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x34, 0x36, 0x34)
 		if err != nil {
@@ -1571,7 +1572,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask & 0x800000000) == 0 { // if not omitted
 		// write "26758531"
 		err = en.Append(0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -1590,7 +1591,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000000000) == 0 { // if not omitted
 		// write "26758831"
 		err = en.Append(0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -1609,7 +1610,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000000000) == 0 { // if not omitted
 		// write "26763164"
 		err = en.Append(0xa8, 0x32, 0x36, 0x37, 0x36, 0x33, 0x31, 0x36, 0x34)
 		if err != nil {
@@ -1628,7 +1629,7 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000000000) == 0 { // if not omitted
 		// write "140503"
 		err = en.Append(0xa6, 0x31, 0x34, 0x30, 0x35, 0x30, 0x33)
 		if err != nil {
@@ -1653,9 +1654,10 @@ func (z *Task) EncodeMsg(en *msgp.Writer) (err error) {
 // MarshalMsg implements msgp.Marshaler
 func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
-	// omitempty: check for empty values
+	// check for omitted fields
 	zb0001Len := uint32(39)
 	var zb0001Mask uint64 /* 39 bits */
+	_ = zb0001Mask
 	if z.FlagString == nil {
 		zb0001Len--
 		zb0001Mask |= 0x1
@@ -1817,7 +1819,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 	if zb0001Len == 0 {
 		return
 	}
-	if (zb0001Mask & 0x1) == 0 { // if not empty
+	if (zb0001Mask & 0x1) == 0 { // if not omitted
 		// string "2676483"
 		o = append(o, 0xa7, 0x32, 0x36, 0x37, 0x36, 0x34, 0x38, 0x33)
 		if z.FlagString == nil {
@@ -1826,7 +1828,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.FlagString)
 		}
 	}
-	if (zb0001Mask & 0x2) == 0 { // if not empty
+	if (zb0001Mask & 0x2) == 0 { // if not omitted
 		// string "2631705"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x31, 0x37, 0x30, 0x35)
 		if z.PercentComplete == nil {
@@ -1835,7 +1837,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendFloat64(o, *z.PercentComplete)
 		}
 	}
-	if (zb0001Mask & 0x4) == 0 { // if not empty
+	if (zb0001Mask & 0x4) == 0 { // if not omitted
 		// string "2632423"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x34, 0x32, 0x33)
 		if z.TaskAcceptanceState == nil {
@@ -1844,7 +1846,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskAcceptanceState)
 		}
 	}
-	if (zb0001Mask & 0x8) == 0 { // if not empty
+	if (zb0001Mask & 0x8) == 0 { // if not omitted
 		// string "26317611"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x36, 0x31, 0x31)
 		if z.TaskAccepted == nil {
@@ -1853,7 +1855,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskAccepted)
 		}
 	}
-	if (zb0001Mask & 0x10) == 0 { // if not empty
+	if (zb0001Mask & 0x10) == 0 { // if not omitted
 		// string "2632003"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x30, 0x33)
 		if z.TaskActualEffort == nil {
@@ -1862,7 +1864,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskActualEffort)
 		}
 	}
-	if (zb0001Mask & 0x20) == 0 { // if not empty
+	if (zb0001Mask & 0x20) == 0 { // if not omitted
 		// string "26323331"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x33, 0x33, 0x31)
 		if z.TaskAssigner == nil {
@@ -1871,7 +1873,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TaskAssigner)
 		}
 	}
-	if (zb0001Mask & 0x40) == 0 { // if not empty
+	if (zb0001Mask & 0x40) == 0 { // if not omitted
 		// string "26321211"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x32, 0x31, 0x31)
 		if z.TaskComplete == nil {
@@ -1880,7 +1882,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskComplete)
 		}
 	}
-	if (zb0001Mask & 0x80) == 0 { // if not empty
+	if (zb0001Mask & 0x80) == 0 { // if not omitted
 		// string "2632733"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x37, 0x33, 0x33)
 		if z.TaskCustomFlags == nil {
@@ -1889,7 +1891,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskCustomFlags)
 		}
 	}
-	if (zb0001Mask & 0x100) == 0 { // if not empty
+	if (zb0001Mask & 0x100) == 0 { // if not omitted
 		// string "26318364"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x38, 0x33, 0x36, 0x34)
 		if z.TaskDateCompleted == nil {
@@ -1898,7 +1900,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.TaskDateCompleted)
 		}
 	}
-	if (zb0001Mask & 0x200) == 0 { // if not empty
+	if (zb0001Mask & 0x200) == 0 { // if not omitted
 		// string "26317711"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x37, 0x31, 0x31)
 		if z.TaskDeadOccurrence == nil {
@@ -1907,7 +1909,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskDeadOccurrence)
 		}
 	}
-	if (zb0001Mask & 0x400) == 0 { // if not empty
+	if (zb0001Mask & 0x400) == 0 { // if not omitted
 		// string "26317364"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x33, 0x36, 0x34)
 		if z.TaskDueDate == nil {
@@ -1916,7 +1918,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.TaskDueDate)
 		}
 	}
-	if (zb0001Mask & 0x800) == 0 { // if not empty
+	if (zb0001Mask & 0x800) == 0 { // if not omitted
 		// string "2632013"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x31, 0x33)
 		if z.TaskEstimatedEffort == nil {
@@ -1925,7 +1927,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskEstimatedEffort)
 		}
 	}
-	if (zb0001Mask & 0x1000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000) == 0 { // if not omitted
 		// string "26321411"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x34, 0x31, 0x31)
 		if z.TaskfCreator == nil {
@@ -1934,7 +1936,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskfCreator)
 		}
 	}
-	if (zb0001Mask & 0x2000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000) == 0 { // if not omitted
 		// string "26324411"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x34, 0x34, 0x31, 0x31)
 		if z.TaskfFixOffline == nil {
@@ -1943,7 +1945,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskfFixOffline)
 		}
 	}
-	if (zb0001Mask & 0x4000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000) == 0 { // if not omitted
 		// string "26323811"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x38, 0x31, 0x31)
 		if z.TaskfRecurring == nil {
@@ -1952,7 +1954,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskfRecurring)
 		}
 	}
-	if (zb0001Mask & 0x8000) == 0 { // if not empty
+	if (zb0001Mask & 0x8000) == 0 { // if not omitted
 		// string "2632103"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x31, 0x30, 0x33)
 		if z.TaskHistory == nil {
@@ -1961,7 +1963,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskHistory)
 		}
 	}
-	if (zb0001Mask & 0x10000) == 0 { // if not empty
+	if (zb0001Mask & 0x10000) == 0 { // if not omitted
 		// string "26323731"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x37, 0x33, 0x31)
 		if z.TaskLastDelegate == nil {
@@ -1970,7 +1972,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TaskLastDelegate)
 		}
 	}
-	if (zb0001Mask & 0x20000) == 0 { // if not empty
+	if (zb0001Mask & 0x20000) == 0 { // if not omitted
 		// string "26320564"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x30, 0x35, 0x36, 0x34)
 		if z.TaskLastUpdate == nil {
@@ -1979,7 +1981,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.TaskLastUpdate)
 		}
 	}
-	if (zb0001Mask & 0x40000) == 0 { // if not empty
+	if (zb0001Mask & 0x40000) == 0 { // if not omitted
 		// string "26323431"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x34, 0x33, 0x31)
 		if z.TaskLastUser == nil {
@@ -1988,7 +1990,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TaskLastUser)
 		}
 	}
-	if (zb0001Mask & 0x80000) == 0 { // if not empty
+	if (zb0001Mask & 0x80000) == 0 { // if not omitted
 		// string "2673043"
 		o = append(o, 0xa7, 0x32, 0x36, 0x37, 0x33, 0x30, 0x34, 0x33)
 		if z.TaskMode == nil {
@@ -1997,7 +1999,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskMode)
 		}
 	}
-	if (zb0001Mask & 0x100000) == 0 { // if not empty
+	if (zb0001Mask & 0x100000) == 0 { // if not omitted
 		// string "2632323"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x33, 0x32, 0x33)
 		if z.TaskMultipleRecipients == nil {
@@ -2006,7 +2008,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskMultipleRecipients)
 		}
 	}
-	if (zb0001Mask & 0x200000) == 0 { // if not empty
+	if (zb0001Mask & 0x200000) == 0 { // if not omitted
 		// string "26323611"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x36, 0x31, 0x31)
 		if z.TaskNoCompute == nil {
@@ -2015,7 +2017,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskNoCompute)
 		}
 	}
-	if (zb0001Mask & 0x400000) == 0 { // if not empty
+	if (zb0001Mask & 0x400000) == 0 { // if not omitted
 		// string "2632353"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x33, 0x35, 0x33)
 		if z.TaskOrdinal == nil {
@@ -2024,7 +2026,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskOrdinal)
 		}
 	}
-	if (zb0001Mask & 0x800000) == 0 { // if not empty
+	if (zb0001Mask & 0x800000) == 0 { // if not omitted
 		// string "26321531"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x35, 0x33, 0x31)
 		if z.TaskOwner == nil {
@@ -2033,7 +2035,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TaskOwner)
 		}
 	}
-	if (zb0001Mask & 0x1000000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000000) == 0 { // if not omitted
 		// string "2632413"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x34, 0x31, 0x33)
 		if z.TaskOwnership == nil {
@@ -2042,7 +2044,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskOwnership)
 		}
 	}
-	if (zb0001Mask & 0x2000000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000000) == 0 { // if not omitted
 		// string "26317511"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x35, 0x31, 0x31)
 		if z.TaskResetReminder == nil {
@@ -2051,7 +2053,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskResetReminder)
 		}
 	}
-	if (zb0001Mask & 0x4000000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000000) == 0 { // if not omitted
 		// string "26323931"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x33, 0x39, 0x33, 0x31)
 		if z.TaskRole == nil {
@@ -2060,7 +2062,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TaskRole)
 		}
 	}
-	if (zb0001Mask & 0x8000000) == 0 { // if not empty
+	if (zb0001Mask & 0x8000000) == 0 { // if not omitted
 		// string "26317264"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x32, 0x36, 0x34)
 		if z.TaskStartDate == nil {
@@ -2069,7 +2071,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.TaskStartDate)
 		}
 	}
-	if (zb0001Mask & 0x10000000) == 0 { // if not empty
+	if (zb0001Mask & 0x10000000) == 0 { // if not omitted
 		// string "2632033"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x33, 0x33)
 		if z.TaskState == nil {
@@ -2078,7 +2080,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskState)
 		}
 	}
-	if (zb0001Mask & 0x20000000) == 0 { // if not empty
+	if (zb0001Mask & 0x20000000) == 0 { // if not omitted
 		// string "2631693"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x31, 0x36, 0x39, 0x33)
 		if z.TaskStatus == nil {
@@ -2087,7 +2089,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskStatus)
 		}
 	}
-	if (zb0001Mask & 0x40000000) == 0 { // if not empty
+	if (zb0001Mask & 0x40000000) == 0 { // if not omitted
 		// string "26320911"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x30, 0x39, 0x31, 0x31)
 		if z.TaskStatusOnComplete == nil {
@@ -2096,7 +2098,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskStatusOnComplete)
 		}
 	}
-	if (zb0001Mask & 0x80000000) == 0 { // if not empty
+	if (zb0001Mask & 0x80000000) == 0 { // if not omitted
 		// string "26321111"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x32, 0x31, 0x31, 0x31, 0x31)
 		if z.TaskUpdates == nil {
@@ -2105,7 +2107,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TaskUpdates)
 		}
 	}
-	if (zb0001Mask & 0x100000000) == 0 { // if not empty
+	if (zb0001Mask & 0x100000000) == 0 { // if not omitted
 		// string "2632023"
 		o = append(o, 0xa7, 0x32, 0x36, 0x33, 0x32, 0x30, 0x32, 0x33)
 		if z.TaskVersion == nil {
@@ -2114,7 +2116,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.TaskVersion)
 		}
 	}
-	if (zb0001Mask & 0x200000000) == 0 { // if not empty
+	if (zb0001Mask & 0x200000000) == 0 { // if not omitted
 		// string "26317111"
 		o = append(o, 0xa8, 0x32, 0x36, 0x33, 0x31, 0x37, 0x31, 0x31, 0x31)
 		if z.TeamTask == nil {
@@ -2123,7 +2125,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.TeamTask)
 		}
 	}
-	if (zb0001Mask & 0x400000000) == 0 { // if not empty
+	if (zb0001Mask & 0x400000000) == 0 { // if not omitted
 		// string "26758464"
 		o = append(o, 0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x34, 0x36, 0x34)
 		if z.ToDoOrdinalDate == nil {
@@ -2132,7 +2134,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.ToDoOrdinalDate)
 		}
 	}
-	if (zb0001Mask & 0x800000000) == 0 { // if not empty
+	if (zb0001Mask & 0x800000000) == 0 { // if not omitted
 		// string "26758531"
 		o = append(o, 0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x35, 0x33, 0x31)
 		if z.ToDoSubOrdinal == nil {
@@ -2141,7 +2143,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ToDoSubOrdinal)
 		}
 	}
-	if (zb0001Mask & 0x1000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x1000000000) == 0 { // if not omitted
 		// string "26758831"
 		o = append(o, 0xa8, 0x32, 0x36, 0x37, 0x35, 0x38, 0x38, 0x33, 0x31)
 		if z.ToDoTitle == nil {
@@ -2150,7 +2152,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ToDoTitle)
 		}
 	}
-	if (zb0001Mask & 0x2000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x2000000000) == 0 { // if not omitted
 		// string "26763164"
 		o = append(o, 0xa8, 0x32, 0x36, 0x37, 0x36, 0x33, 0x31, 0x36, 0x34)
 		if z.ValidFlagStringProof == nil {
@@ -2159,7 +2161,7 @@ func (z *Task) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.ValidFlagStringProof)
 		}
 	}
-	if (zb0001Mask & 0x4000000000) == 0 { // if not empty
+	if (zb0001Mask & 0x4000000000) == 0 { // if not omitted
 		// string "140503"
 		o = append(o, 0xa6, 0x31, 0x34, 0x30, 0x35, 0x30, 0x33)
 		if z.OrdinalMost == nil {
