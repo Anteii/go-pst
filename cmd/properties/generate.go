@@ -351,7 +351,7 @@ func createProperties(line []byte, properties *[]xmlProperty, property *xmlPrope
 		}
 
 		property.PropertyID = propertyID
-	case bytes.HasPrefix(line, []byte("Data type: ")):
+	case bytes.HasPrefix(line, []byte("Data type: ")) || bytes.HasPrefix(line, []byte("Data Type: ")):
 		dataTypeRegex := regexp.MustCompile("0x[0-9a-fA-F]{4}")
 		dataTypeRegexMatches := dataTypeRegex.FindAll(line, 10)
 
