@@ -25,7 +25,6 @@ import (
 	"encoding/csv"
 	"encoding/xml"
 	"fmt"
-	"github.com/pkg/errors"
 	"io"
 	"net/http"
 	"os"
@@ -34,6 +33,8 @@ import (
 	"strings"
 	"time"
 	"unicode"
+
+	"github.com/pkg/errors"
 )
 
 // main starts the Protocol Buffers generation.
@@ -118,7 +119,7 @@ func download() (destinationFilename string, err error) {
 		Timeout: 60 * time.Second,
 	}
 
-	response, err := httpClientWithTimeout.Get("https://interoperability.blob.core.windows.net/files/MS-OXPROPS/%5bMS-OXPROPS%5d-210817.docx")
+	response, err := httpClientWithTimeout.Get("https://msopenspecs.azureedge.net/files/MS-OXPROPS/%5bMS-OXPROPS%5d-240416.docx")
 
 	if err != nil {
 		return "", errors.WithStack(err)
