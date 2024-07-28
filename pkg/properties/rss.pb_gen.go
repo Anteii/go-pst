@@ -24,7 +24,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 			return
 		}
 		switch msgp.UnsafeString(field) {
-		case "27136431":
+		case "3507631":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -42,7 +42,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "27136031":
+		case "3507231":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -60,7 +60,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "27136331":
+		case "3507531":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -78,7 +78,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "2713623":
+		case "350743":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -96,7 +96,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "27136131":
+		case "3507331":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -114,7 +114,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "27136531":
+		case "3507731":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -132,7 +132,7 @@ func (z *RSS) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
-		case "27136631":
+		case "3507831":
 			if dc.IsNil() {
 				err = dc.ReadNil()
 				if err != nil {
@@ -204,8 +204,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		return
 	}
 	if (zb0001Mask & 0x1) == 0 { // if not omitted
-		// write "27136431"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x34, 0x33, 0x31)
+		// write "3507631"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x36, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -223,8 +223,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x2) == 0 { // if not omitted
-		// write "27136031"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x30, 0x33, 0x31)
+		// write "3507231"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x32, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -242,8 +242,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x4) == 0 { // if not omitted
-		// write "27136331"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x33, 0x33, 0x31)
+		// write "3507531"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x35, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -261,8 +261,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x8) == 0 { // if not omitted
-		// write "2713623"
-		err = en.Append(0xa7, 0x32, 0x37, 0x31, 0x33, 0x36, 0x32, 0x33)
+		// write "350743"
+		err = en.Append(0xa6, 0x33, 0x35, 0x30, 0x37, 0x34, 0x33)
 		if err != nil {
 			return
 		}
@@ -280,8 +280,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x10) == 0 { // if not omitted
-		// write "27136131"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x31, 0x33, 0x31)
+		// write "3507331"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x33, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -299,8 +299,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x20) == 0 { // if not omitted
-		// write "27136531"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x35, 0x33, 0x31)
+		// write "3507731"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x37, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -318,8 +318,8 @@ func (z *RSS) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask & 0x40) == 0 { // if not omitted
-		// write "27136631"
-		err = en.Append(0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x36, 0x33, 0x31)
+		// write "3507831"
+		err = en.Append(0xa7, 0x33, 0x35, 0x30, 0x37, 0x38, 0x33, 0x31)
 		if err != nil {
 			return
 		}
@@ -380,8 +380,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		return
 	}
 	if (zb0001Mask & 0x1) == 0 { // if not omitted
-		// string "27136431"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x34, 0x33, 0x31)
+		// string "3507631"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x36, 0x33, 0x31)
 		if z.PostRssChannel == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -389,8 +389,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x2) == 0 { // if not omitted
-		// string "27136031"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x30, 0x33, 0x31)
+		// string "3507231"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x32, 0x33, 0x31)
 		if z.PostRssChannelLink == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -398,8 +398,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x4) == 0 { // if not omitted
-		// string "27136331"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x33, 0x33, 0x31)
+		// string "3507531"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x35, 0x33, 0x31)
 		if z.PostRssItemGuid == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -407,8 +407,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x8) == 0 { // if not omitted
-		// string "2713623"
-		o = append(o, 0xa7, 0x32, 0x37, 0x31, 0x33, 0x36, 0x32, 0x33)
+		// string "350743"
+		o = append(o, 0xa6, 0x33, 0x35, 0x30, 0x37, 0x34, 0x33)
 		if z.PostRssItemHash == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -416,8 +416,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x10) == 0 { // if not omitted
-		// string "27136131"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x31, 0x33, 0x31)
+		// string "3507331"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x33, 0x33, 0x31)
 		if z.PostRssItemLink == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -425,8 +425,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x20) == 0 { // if not omitted
-		// string "27136531"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x35, 0x33, 0x31)
+		// string "3507731"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x37, 0x33, 0x31)
 		if z.PostRssItemXml == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -434,8 +434,8 @@ func (z *RSS) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask & 0x40) == 0 { // if not omitted
-		// string "27136631"
-		o = append(o, 0xa8, 0x32, 0x37, 0x31, 0x33, 0x36, 0x36, 0x33, 0x31)
+		// string "3507831"
+		o = append(o, 0xa7, 0x33, 0x35, 0x30, 0x37, 0x38, 0x33, 0x31)
 		if z.PostRssSubscription == nil {
 			o = msgp.AppendNil(o)
 		} else {
@@ -463,7 +463,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 			return
 		}
 		switch msgp.UnsafeString(field) {
-		case "27136431":
+		case "3507631":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -480,7 +480,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "27136031":
+		case "3507231":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -497,7 +497,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "27136331":
+		case "3507531":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -514,7 +514,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "2713623":
+		case "350743":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -531,7 +531,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "27136131":
+		case "3507331":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -548,7 +548,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "27136531":
+		case "3507731":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -565,7 +565,7 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
-		case "27136631":
+		case "3507831":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
 				if err != nil {
@@ -596,43 +596,43 @@ func (z *RSS) UnmarshalMsg(bts []byte) (o []byte, err error) {
 
 // Msgsize returns an upper bound estimate of the number of bytes occupied by the serialized message
 func (z *RSS) Msgsize() (s int) {
-	s = 1 + 9
+	s = 1 + 8
 	if z.PostRssChannel == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PostRssChannel)
 	}
-	s += 9
+	s += 8
 	if z.PostRssChannelLink == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PostRssChannelLink)
 	}
-	s += 9
+	s += 8
 	if z.PostRssItemGuid == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PostRssItemGuid)
 	}
-	s += 8
+	s += 7
 	if z.PostRssItemHash == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.Int32Size
 	}
-	s += 9
+	s += 8
 	if z.PostRssItemLink == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PostRssItemLink)
 	}
-	s += 9
+	s += 8
 	if z.PostRssItemXml == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PostRssItemXml)
 	}
-	s += 9
+	s += 8
 	if z.PostRssSubscription == nil {
 		s += msgp.NilSize
 	} else {
