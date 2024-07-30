@@ -546,6 +546,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "12312258":
+			z.ArchiveTag, err = dc.ReadBytes(z.ArchiveTag)
+			if err != nil {
+				err = msgp.WrapError(err, "ArchiveTag")
+				return
+			}
 		case "1489631":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -726,6 +732,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "113258":
+			z.ConversationIndex, err = dc.ReadBytes(z.ConversationIndex)
+			if err != nil {
+				err = msgp.WrapError(err, "ConversationIndex")
+				return
+			}
 		case "11231":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -852,6 +864,48 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "424164":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "FlagCompleteTime")
+					return
+				}
+				z.FlagCompleteTime = nil
+			} else {
+				if z.FlagCompleteTime == nil {
+					z.FlagCompleteTime = new(int64)
+				}
+				*z.FlagCompleteTime, err = dc.ReadInt64()
+				if err != nil {
+					err = msgp.WrapError(err, "FlagCompleteTime")
+					return
+				}
+			}
+		case "42403":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "FlagStatus")
+					return
+				}
+				z.FlagStatus = nil
+			} else {
+				if z.FlagStatus == nil {
+					z.FlagStatus = new(int32)
+				}
+				*z.FlagStatus, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "FlagStatus")
+					return
+				}
+			}
+		case "4115258":
+			z.Html, err = dc.ReadBytes(z.Html)
+			if err != nil {
+				err = msgp.WrapError(err, "Html")
+				return
+			}
 		case "42243":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -921,6 +975,24 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 				*z.InReplyToId, err = dc.ReadString()
 				if err != nil {
 					err = msgp.WrapError(err, "InReplyToId")
+					return
+				}
+			}
+		case "163503":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "InternetCodepage")
+					return
+				}
+				z.InternetCodepage = nil
+			} else {
+				if z.InternetCodepage == nil {
+					z.InternetCodepage = new(int32)
+				}
+				*z.InternetCodepage, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "InternetCodepage")
 					return
 				}
 			}
@@ -1050,6 +1122,78 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "416331":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "ListHelp")
+					return
+				}
+				z.ListHelp = nil
+			} else {
+				if z.ListHelp == nil {
+					z.ListHelp = new(string)
+				}
+				*z.ListHelp, err = dc.ReadString()
+				if err != nil {
+					err = msgp.WrapError(err, "ListHelp")
+					return
+				}
+			}
+		case "416431":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "ListSubscribe")
+					return
+				}
+				z.ListSubscribe = nil
+			} else {
+				if z.ListSubscribe == nil {
+					z.ListSubscribe = new(string)
+				}
+				*z.ListSubscribe, err = dc.ReadString()
+				if err != nil {
+					err = msgp.WrapError(err, "ListSubscribe")
+					return
+				}
+			}
+		case "416531":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "ListUnsubscribe")
+					return
+				}
+				z.ListUnsubscribe = nil
+			} else {
+				if z.ListUnsubscribe == nil {
+					z.ListUnsubscribe = new(string)
+				}
+				*z.ListUnsubscribe, err = dc.ReadString()
+				if err != nil {
+					err = msgp.WrapError(err, "ListUnsubscribe")
+					return
+				}
+			}
+		case "262733":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "LocaleId")
+					return
+				}
+				z.LocaleId = nil
+			} else {
+				if z.LocaleId == nil {
+					z.LocaleId = new(int32)
+				}
+				*z.LocaleId, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "LocaleId")
+					return
+				}
+			}
 		case "1488731":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1104,6 +1248,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "4088258":
+			z.MappingSignature, err = dc.ReadBytes(z.MappingSignature)
+			if err != nil {
+				err = msgp.WrapError(err, "MappingSignature")
+				return
+			}
 		case "8811":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1140,6 +1290,24 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "227933":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "MessageEditorFormat")
+					return
+				}
+				z.MessageEditorFormat = nil
+			} else {
+				if z.MessageEditorFormat == nil {
+					z.MessageEditorFormat = new(int32)
+				}
+				*z.MessageEditorFormat, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "MessageEditorFormat")
+					return
+				}
+			}
 		case "35913":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1173,6 +1341,24 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 				*z.MessageHandlingSystemCommonName, err = dc.ReadString()
 				if err != nil {
 					err = msgp.WrapError(err, "MessageHandlingSystemCommonName")
+					return
+				}
+			}
+		case "163693":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "MessageLocaleId")
+					return
+				}
+				z.MessageLocaleId = nil
+			} else {
+				if z.MessageLocaleId == nil {
+					z.MessageLocaleId = new(int32)
+				}
+				*z.MessageLocaleId, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "MessageLocaleId")
 					return
 				}
 			}
@@ -1247,6 +1433,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "MessageStatus")
 					return
 				}
+			}
+		case "71258":
+			z.MessageSubmissionId, err = dc.ReadBytes(z.MessageSubmissionId)
+			if err != nil {
+				err = msgp.WrapError(err, "MessageSubmissionId")
+				return
 			}
 		case "8711":
 			if dc.IsNil() {
@@ -1428,6 +1620,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "76258":
+			z.OriginalAuthorEntryId, err = dc.ReadBytes(z.OriginalAuthorEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalAuthorEntryId")
+				return
+			}
 		case "7731":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1518,6 +1716,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "14866258":
+			z.OriginalEntryId, err = dc.ReadBytes(z.OriginalEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalEntryId")
+				return
+			}
 		case "7531":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1572,6 +1776,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "91258":
+			z.OriginalSenderEntryId, err = dc.ReadBytes(z.OriginalSenderEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSenderEntryId")
+				return
+			}
 		case "9031":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1589,6 +1799,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "OriginalSenderName")
 					return
 				}
+			}
+		case "92258":
+			z.OriginalSenderSearchKey, err = dc.ReadBytes(z.OriginalSenderSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSenderSearchKey")
+				return
 			}
 		case "463":
 			if dc.IsNil() {
@@ -1644,6 +1860,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "94258":
+			z.OriginalSentRepresentingEntryId, err = dc.ReadBytes(z.OriginalSentRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSentRepresentingEntryId")
+				return
+			}
 		case "9331":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1661,6 +1883,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "OriginalSentRepresentingName")
 					return
 				}
+			}
+		case "95258":
+			z.OriginalSentRepresentingSearchKey, err = dc.ReadBytes(z.OriginalSentRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSentRepresentingSearchKey")
+				return
 			}
 		case "7331":
 			if dc.IsNil() {
@@ -1878,6 +2106,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "12313258":
+			z.PolicyTag, err = dc.ReadBytes(z.PolicyTag)
+			if err != nil {
+				err = msgp.WrapError(err, "PolicyTag")
+				return
+			}
 		case "383":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1950,6 +2184,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "63258":
+			z.ReceivedByEntryId, err = dc.ReadBytes(z.ReceivedByEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedByEntryId")
+				return
+			}
 		case "6431":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -1967,6 +2207,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "ReceivedByName")
 					return
 				}
+			}
+		case "81258":
+			z.ReceivedBySearchKey, err = dc.ReadBytes(z.ReceivedBySearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedBySearchKey")
+				return
 			}
 		case "11931":
 			if dc.IsNil() {
@@ -2004,6 +2250,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "67258":
+			z.ReceivedRepresentingEntryId, err = dc.ReadBytes(z.ReceivedRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedRepresentingEntryId")
+				return
+			}
 		case "6831":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -2021,6 +2273,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "ReceivedRepresentingName")
 					return
 				}
+			}
+		case "82258":
+			z.ReceivedRepresentingSearchKey, err = dc.ReadBytes(z.ReceivedRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedRepresentingSearchKey")
+				return
 			}
 		case "30933":
 			if dc.IsNil() {
@@ -2184,6 +2442,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "4105258":
+			z.RtfCompressed, err = dc.ReadBytes(z.RtfCompressed)
+			if err != nil {
+				err = msgp.WrapError(err, "RtfCompressed")
+				return
+			}
 		case "361511":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -2238,6 +2502,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "3097258":
+			z.SenderEntryId, err = dc.ReadBytes(z.SenderEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "SenderEntryId")
+				return
+			}
 		case "165053":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -2273,6 +2543,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					err = msgp.WrapError(err, "SenderName")
 					return
 				}
+			}
+		case "3101258":
+			z.SenderSearchKey, err = dc.ReadBytes(z.SenderSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "SenderSearchKey")
+				return
 			}
 		case "149613":
 			if dc.IsNil() {
@@ -2364,6 +2640,30 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "65258":
+			z.SentRepresentingEntryId, err = dc.ReadBytes(z.SentRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "SentRepresentingEntryId")
+				return
+			}
+		case "164103":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "SentRepresentingFlags")
+					return
+				}
+				z.SentRepresentingFlags = nil
+			} else {
+				if z.SentRepresentingFlags == nil {
+					z.SentRepresentingFlags = new(int32)
+				}
+				*z.SentRepresentingFlags, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "SentRepresentingFlags")
+					return
+				}
+			}
 		case "6631":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -2382,6 +2682,12 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "59258":
+			z.SentRepresentingSearchKey, err = dc.ReadBytes(z.SentRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "SentRepresentingSearchKey")
+				return
+			}
 		case "1484631":
 			if dc.IsNil() {
 				err = dc.ReadNil()
@@ -2397,6 +2703,30 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 				*z.SmtpAddress, err = dc.ReadString()
 				if err != nil {
 					err = msgp.WrapError(err, "SmtpAddress")
+					return
+				}
+			}
+		case "12315258":
+			z.StartDateEtc, err = dc.ReadBytes(z.StartDateEtc)
+			if err != nil {
+				err = msgp.WrapError(err, "StartDateEtc")
+				return
+			}
+		case "133253":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "StoreSupportMask")
+					return
+				}
+				z.StoreSupportMask = nil
+			} else {
+				if z.StoreSupportMask == nil {
+					z.StoreSupportMask = new(int32)
+				}
+				*z.StoreSupportMask, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "StoreSupportMask")
 					return
 				}
 			}
@@ -2490,6 +2820,24 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 					return
 				}
 			}
+		case "286793":
+			if dc.IsNil() {
+				err = dc.ReadNil()
+				if err != nil {
+					err = msgp.WrapError(err, "ViewDescriptorVersion")
+					return
+				}
+				z.ViewDescriptorVersion = nil
+			} else {
+				if z.ViewDescriptorVersion == nil {
+					z.ViewDescriptorVersion = new(int32)
+				}
+				*z.ViewDescriptorVersion, err = dc.ReadInt32()
+				if err != nil {
+					err = msgp.WrapError(err, "ViewDescriptorVersion")
+					return
+				}
+			}
 		default:
 			err = dc.Skip()
 			if err != nil {
@@ -2504,8 +2852,8 @@ func (z *Message) DecodeMsg(dc *msgp.Reader) (err error) {
 // EncodeMsg implements msgp.Encodable
 func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 	// check for omitted fields
-	zb0001Len := uint32(137)
-	var zb0001Mask [3]uint64 /* 137 bits */
+	zb0001Len := uint32(171)
+	var zb0001Mask [3]uint64 /* 171 bits */
 	_ = zb0001Mask
 	if z.AutoProcessState == nil {
 		zb0001Len--
@@ -2583,437 +2931,573 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000
 	}
-	if z.Assistant == nil {
+	if z.ArchiveTag == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000
 	}
-	if z.AssistantTelephoneNumber == nil {
+	if z.Assistant == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000
 	}
-	if z.AutoResponseSuppress == nil {
+	if z.AssistantTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000
 	}
-	if z.BlockStatus == nil {
+	if z.AutoResponseSuppress == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000
 	}
-	if z.Body == nil {
+	if z.BlockStatus == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000
 	}
-	if z.BodyContentLocation == nil {
+	if z.Body == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000
 	}
-	if z.BodyHtml == nil {
+	if z.BodyContentLocation == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000
 	}
-	if z.ClientActivelyEditingUntil == nil {
+	if z.BodyHtml == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000
 	}
-	if z.ClientSubmitTime == nil {
+	if z.ClientActivelyEditingUntil == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000
 	}
-	if z.ContentFilterSpamConfidenceLevel == nil {
+	if z.ClientSubmitTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000
 	}
-	if z.ConversationTopic == nil {
+	if z.ContentFilterSpamConfidenceLevel == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000
 	}
-	if z.CreationTime == nil {
+	if z.ConversationIndex == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000000
 	}
-	if z.CreatorName == nil {
+	if z.ConversationTopic == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000000
 	}
-	if z.DeliverTime == nil {
+	if z.CreationTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000000
 	}
-	if z.DisplayBcc == nil {
+	if z.CreatorName == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000000
 	}
-	if z.DisplayCc == nil {
+	if z.DeliverTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000000
 	}
-	if z.DisplayTo == nil {
+	if z.DisplayBcc == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000000
 	}
-	if z.IconIndex == nil {
+	if z.DisplayCc == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000000
 	}
-	if z.Importance == nil {
+	if z.DisplayTo == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000000
 	}
-	if z.Initials == nil {
+	if z.FlagCompleteTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000000
 	}
-	if z.InReplyToId == nil {
+	if z.FlagStatus == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000000
 	}
-	if z.InternetMailOverrideFormat == nil {
+	if z.Html == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000000
 	}
-	if z.InternetMessageId == nil {
+	if z.IconIndex == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000000
 	}
-	if z.InternetReferences == nil {
+	if z.Importance == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000000000
 	}
-	if z.IsdnNumber == nil {
+	if z.Initials == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000000000
 	}
-	if z.Keyword == nil {
+	if z.InReplyToId == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000000000
 	}
-	if z.Language == nil {
+	if z.InternetCodepage == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000000000
 	}
-	if z.LastModificationTime == nil {
+	if z.InternetMailOverrideFormat == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000000000
 	}
-	if z.Locality == nil {
+	if z.InternetMessageId == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000000000
 	}
-	if z.Location == nil {
+	if z.InternetReferences == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000000000
 	}
-	if z.ManagerName == nil {
+	if z.IsdnNumber == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000000000
 	}
-	if z.MessageCcMe == nil {
+	if z.Keyword == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000000000
 	}
-	if z.MessageDeliveryTime == nil {
+	if z.Language == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000000000
 	}
-	if z.MessageFlags == nil {
+	if z.LastModificationTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000000000
 	}
-	if z.MessageHandlingSystemCommonName == nil {
+	if z.ListHelp == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000000000
 	}
-	if z.MessageRecipientMe == nil {
+	if z.ListSubscribe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1
 	}
-	if z.MessageSize == nil {
+	if z.ListUnsubscribe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2
 	}
-	if z.MessageSizeExtended == nil {
+	if z.LocaleId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4
 	}
-	if z.MessageStatus == nil {
+	if z.Locality == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8
 	}
-	if z.MessageToMe == nil {
+	if z.Location == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10
 	}
-	if z.MiddleName == nil {
+	if z.ManagerName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20
 	}
-	if z.MobileTelephoneNumber == nil {
+	if z.MappingSignature == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40
 	}
-	if z.Nickname == nil {
+	if z.MessageCcMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80
 	}
-	if z.NonDeliveryReportDiagCode == nil {
+	if z.MessageDeliveryTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100
 	}
-	if z.NonDeliveryReportReasonCode == nil {
+	if z.MessageEditorFormat == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200
 	}
-	if z.NonDeliveryReportStatusCode == nil {
+	if z.MessageFlags == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400
 	}
-	if z.NormalizedSubject == nil {
+	if z.MessageHandlingSystemCommonName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800
 	}
-	if z.OfficeLocation == nil {
+	if z.MessageLocaleId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000
 	}
-	if z.OrganizationalIdNumber == nil {
+	if z.MessageRecipientMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000
 	}
-	if z.OriginalAuthorName == nil {
+	if z.MessageSize == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000
 	}
-	if z.OriginalDeliveryTime == nil {
+	if z.MessageSizeExtended == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000
 	}
-	if z.OriginalDisplayBcc == nil {
+	if z.MessageStatus == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000
 	}
-	if z.OriginalDisplayCc == nil {
+	if z.MessageSubmissionId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000
 	}
-	if z.OriginalDisplayTo == nil {
+	if z.MessageToMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000
 	}
-	if z.OriginalMessageClass == nil {
+	if z.MiddleName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000
 	}
-	if z.OriginalSenderAddressType == nil {
+	if z.MobileTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000
 	}
-	if z.OriginalSenderEmailAddress == nil {
+	if z.Nickname == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000
 	}
-	if z.OriginalSenderName == nil {
+	if z.NonDeliveryReportDiagCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000
 	}
-	if z.OriginalSensitivity == nil {
+	if z.NonDeliveryReportReasonCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000
 	}
-	if z.OriginalSentRepresentingAddressType == nil {
+	if z.NonDeliveryReportStatusCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000
 	}
-	if z.OriginalSentRepresentingEmailAddress == nil {
+	if z.NormalizedSubject == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000
 	}
-	if z.OriginalSentRepresentingName == nil {
+	if z.OfficeLocation == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000
 	}
-	if z.OriginalSubject == nil {
+	if z.OrganizationalIdNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000
 	}
-	if z.OriginalSubmitTime == nil {
+	if z.OriginalAuthorEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000
 	}
-	if z.OriginatorDeliveryReportRequested == nil {
+	if z.OriginalAuthorName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000
 	}
-	if z.OriginatorNonDeliveryReportRequested == nil {
+	if z.OriginalDeliveryTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000
 	}
-	if z.OtherAddressCity == nil {
+	if z.OriginalDisplayBcc == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000
 	}
-	if z.OtherAddressCountry == nil {
+	if z.OriginalDisplayCc == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000
 	}
-	if z.OtherAddressPostalCode == nil {
+	if z.OriginalDisplayTo == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000
 	}
-	if z.OtherAddressPostOfficeBox == nil {
+	if z.OriginalEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000
 	}
-	if z.OtherAddressStateOrProvince == nil {
+	if z.OriginalMessageClass == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000
 	}
-	if z.OtherAddressStreet == nil {
+	if z.OriginalSenderAddressType == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000
 	}
-	if z.OtherTelephoneNumber == nil {
+	if z.OriginalSenderEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000
 	}
-	if z.PagerTelephoneNumber == nil {
+	if z.OriginalSenderEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000
 	}
-	if z.Priority == nil {
+	if z.OriginalSenderName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000
 	}
-	if z.ReadReceiptRequested == nil {
+	if z.OriginalSenderSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000000
 	}
-	if z.ReceiptTime == nil {
+	if z.OriginalSensitivity == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000000
 	}
-	if z.ReceivedByEmailAddress == nil {
+	if z.OriginalSentRepresentingAddressType == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000000
 	}
-	if z.ReceivedByName == nil {
+	if z.OriginalSentRepresentingEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000000
 	}
-	if z.ReceivedRepresentingAddressType == nil {
+	if z.OriginalSentRepresentingEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000000
 	}
-	if z.ReceivedRepresentingEmailAddress == nil {
+	if z.OriginalSentRepresentingName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000000
 	}
-	if z.ReceivedRepresentingName == nil {
+	if z.OriginalSentRepresentingSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000000
 	}
-	if z.RecipientType == nil {
+	if z.OriginalSubject == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000000
 	}
-	if z.RemoteMessageTransferAgent == nil {
+	if z.OriginalSubmitTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000000
 	}
-	if z.ReplyRequested == nil {
+	if z.OriginatorDeliveryReportRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000000
 	}
-	if z.ReportDisposition == nil {
+	if z.OriginatorNonDeliveryReportRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000000
 	}
-	if z.ReportDispositionMode == nil {
+	if z.OtherAddressCity == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000000
 	}
-	if z.ReportingMessageTransferAgent == nil {
+	if z.OtherAddressCountry == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000000000
 	}
-	if z.RetentionDate == nil {
+	if z.OtherAddressPostalCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000000000
 	}
-	if z.RetentionFlags == nil {
+	if z.OtherAddressPostOfficeBox == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000000000
 	}
-	if z.RetentionPeriod == nil {
+	if z.OtherAddressStateOrProvince == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000000000
 	}
-	if z.RtfInSync == nil {
+	if z.OtherAddressStreet == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000000000
 	}
-	if z.SenderAddressType == nil {
+	if z.OtherTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000000000
 	}
-	if z.SenderEmailAddress == nil {
+	if z.PagerTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000000000
 	}
-	if z.SenderIdStatus == nil {
+	if z.PolicyTag == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000000000
 	}
-	if z.SenderName == nil {
+	if z.Priority == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000000000
 	}
-	if z.SendInternetEncoding == nil {
+	if z.ReadReceiptRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000000000
 	}
-	if z.SendRichInfo == nil {
+	if z.ReceiptTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000000000
 	}
-	if z.Sensitivity == nil {
+	if z.ReceivedByEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000000000
 	}
-	if z.SentRepresentingAddressType == nil {
+	if z.ReceivedByEntryId == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x1
 	}
-	if z.SentRepresentingEmailAddress == nil {
+	if z.ReceivedByName == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x2
 	}
-	if z.SentRepresentingName == nil {
+	if z.ReceivedBySearchKey == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x4
 	}
-	if z.SmtpAddress == nil {
+	if z.ReceivedRepresentingAddressType == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x8
 	}
-	if z.Subject == nil {
+	if z.ReceivedRepresentingEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x10
 	}
-	if z.SubjectPrefix == nil {
+	if z.ReceivedRepresentingEntryId == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x20
 	}
-	if z.SupplementaryInfo == nil {
+	if z.ReceivedRepresentingName == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x40
 	}
-	if z.TransmittableDisplayName == nil {
+	if z.ReceivedRepresentingSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x80
 	}
-	if z.TransportMessageHeaders == nil {
+	if z.RecipientType == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x100
+	}
+	if z.RemoteMessageTransferAgent == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200
+	}
+	if z.ReplyRequested == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400
+	}
+	if z.ReportDisposition == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800
+	}
+	if z.ReportDispositionMode == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000
+	}
+	if z.ReportingMessageTransferAgent == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000
+	}
+	if z.RetentionDate == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000
+	}
+	if z.RetentionFlags == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000
+	}
+	if z.RetentionPeriod == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000
+	}
+	if z.RtfCompressed == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000
+	}
+	if z.RtfInSync == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000
+	}
+	if z.SenderAddressType == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x80000
+	}
+	if z.SenderEmailAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x100000
+	}
+	if z.SenderEntryId == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200000
+	}
+	if z.SenderIdStatus == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400000
+	}
+	if z.SenderName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800000
+	}
+	if z.SenderSearchKey == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000000
+	}
+	if z.SendInternetEncoding == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000000
+	}
+	if z.SendRichInfo == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000000
+	}
+	if z.Sensitivity == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000000
+	}
+	if z.SentRepresentingAddressType == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000000
+	}
+	if z.SentRepresentingEmailAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000000
+	}
+	if z.SentRepresentingEntryId == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000000
+	}
+	if z.SentRepresentingFlags == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x80000000
+	}
+	if z.SentRepresentingName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x100000000
+	}
+	if z.SentRepresentingSearchKey == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200000000
+	}
+	if z.SmtpAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400000000
+	}
+	if z.StartDateEtc == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800000000
+	}
+	if z.StoreSupportMask == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000000000
+	}
+	if z.Subject == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000000000
+	}
+	if z.SubjectPrefix == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000000000
+	}
+	if z.SupplementaryInfo == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000000000
+	}
+	if z.TransmittableDisplayName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000000000
+	}
+	if z.TransportMessageHeaders == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000000000
+	}
+	if z.ViewDescriptorVersion == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000000000
 	}
 	// variable map header, size zb0001Len
 	err = en.WriteMapHeader(zb0001Len)
@@ -3555,6 +4039,18 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 		}
 	}
 	if (zb0001Mask[0] & 0x20000000) == 0 { // if not omitted
+		// write "12312258"
+		err = en.Append(0xa8, 0x31, 0x32, 0x33, 0x31, 0x32, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ArchiveTag)
+		if err != nil {
+			err = msgp.WrapError(err, "ArchiveTag")
+			return
+		}
+	}
+	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
 		// write "1489631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3573,7 +4069,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
 		// write "1489431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -3592,7 +4088,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
 		// write "163513"
 		err = en.Append(0xa6, 0x31, 0x36, 0x33, 0x35, 0x31, 0x33)
 		if err != nil {
@@ -3611,7 +4107,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
 		// write "42463"
 		err = en.Append(0xa5, 0x34, 0x32, 0x34, 0x36, 0x33)
 		if err != nil {
@@ -3630,7 +4126,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
 		// write "409631"
 		err = en.Append(0xa6, 0x34, 0x30, 0x39, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3649,7 +4145,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
 		// write "411631"
 		err = en.Append(0xa6, 0x34, 0x31, 0x31, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3668,7 +4164,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
 		// write "411531"
 		err = en.Append(0xa6, 0x34, 0x31, 0x31, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -3687,7 +4183,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
 		// write "1408064"
 		err = en.Append(0xa7, 0x31, 0x34, 0x30, 0x38, 0x30, 0x36, 0x34)
 		if err != nil {
@@ -3706,7 +4202,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
 		// write "5764"
 		err = en.Append(0xa4, 0x35, 0x37, 0x36, 0x34)
 		if err != nil {
@@ -3725,7 +4221,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
 		// write "165023"
 		err = en.Append(0xa6, 0x31, 0x36, 0x35, 0x30, 0x32, 0x33)
 		if err != nil {
@@ -3744,7 +4240,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
+		// write "113258"
+		err = en.Append(0xa6, 0x31, 0x31, 0x33, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ConversationIndex)
+		if err != nil {
+			err = msgp.WrapError(err, "ConversationIndex")
+			return
+		}
+	}
+	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
 		// write "11231"
 		err = en.Append(0xa5, 0x31, 0x31, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3763,7 +4271,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
 		// write "1229564"
 		err = en.Append(0xa7, 0x31, 0x32, 0x32, 0x39, 0x35, 0x36, 0x34)
 		if err != nil {
@@ -3782,7 +4290,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
 		// write "1637631"
 		err = en.Append(0xa7, 0x31, 0x36, 0x33, 0x37, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3801,7 +4309,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
 		// write "1664"
 		err = en.Append(0xa4, 0x31, 0x36, 0x36, 0x34)
 		if err != nil {
@@ -3820,7 +4328,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
 		// write "358631"
 		err = en.Append(0xa6, 0x33, 0x35, 0x38, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -3839,7 +4347,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
 		// write "358731"
 		err = en.Append(0xa6, 0x33, 0x35, 0x38, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -3858,7 +4366,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
 		// write "358831"
 		err = en.Append(0xa6, 0x33, 0x35, 0x38, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3877,7 +4385,57 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
+		// write "424164"
+		err = en.Append(0xa6, 0x34, 0x32, 0x34, 0x31, 0x36, 0x34)
+		if err != nil {
+			return
+		}
+		if z.FlagCompleteTime == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt64(*z.FlagCompleteTime)
+			if err != nil {
+				err = msgp.WrapError(err, "FlagCompleteTime")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
+		// write "42403"
+		err = en.Append(0xa5, 0x34, 0x32, 0x34, 0x30, 0x33)
+		if err != nil {
+			return
+		}
+		if z.FlagStatus == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.FlagStatus)
+			if err != nil {
+				err = msgp.WrapError(err, "FlagStatus")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
+		// write "4115258"
+		err = en.Append(0xa7, 0x34, 0x31, 0x31, 0x35, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.Html)
+		if err != nil {
+			err = msgp.WrapError(err, "Html")
+			return
+		}
+	}
+	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
 		// write "42243"
 		err = en.Append(0xa5, 0x34, 0x32, 0x32, 0x34, 0x33)
 		if err != nil {
@@ -3896,7 +4454,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
 		// write "233"
 		err = en.Append(0xa3, 0x32, 0x33, 0x33)
 		if err != nil {
@@ -3915,7 +4473,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
 		// write "1485831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -3934,7 +4492,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
 		// write "416231"
 		err = en.Append(0xa6, 0x34, 0x31, 0x36, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -3953,7 +4511,26 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
+		// write "163503"
+		err = en.Append(0xa6, 0x31, 0x36, 0x33, 0x35, 0x30, 0x33)
+		if err != nil {
+			return
+		}
+		if z.InternetCodepage == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.InternetCodepage)
+			if err != nil {
+				err = msgp.WrapError(err, "InternetCodepage")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
 		// write "227863"
 		err = en.Append(0xa6, 0x32, 0x32, 0x37, 0x38, 0x36, 0x33)
 		if err != nil {
@@ -3972,7 +4549,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
 		// write "414931"
 		err = en.Append(0xa6, 0x34, 0x31, 0x34, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -3991,7 +4568,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
 		// write "415331"
 		err = en.Append(0xa6, 0x34, 0x31, 0x35, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4010,7 +4587,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
 		// write "1489331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x39, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4029,7 +4606,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000000000) == 0 { // if not omitted
 		// write "1485931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x35, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4048,7 +4625,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x2000000000000000) == 0 { // if not omitted
 		// write "1486031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -4067,7 +4644,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
 		// write "1229664"
 		err = en.Append(0xa7, 0x31, 0x32, 0x32, 0x39, 0x36, 0x36, 0x34)
 		if err != nil {
@@ -4086,7 +4663,83 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
+		// write "416331"
+		err = en.Append(0xa6, 0x34, 0x31, 0x36, 0x33, 0x33, 0x31)
+		if err != nil {
+			return
+		}
+		if z.ListHelp == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteString(*z.ListHelp)
+			if err != nil {
+				err = msgp.WrapError(err, "ListHelp")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
+		// write "416431"
+		err = en.Append(0xa6, 0x34, 0x31, 0x36, 0x34, 0x33, 0x31)
+		if err != nil {
+			return
+		}
+		if z.ListSubscribe == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteString(*z.ListSubscribe)
+			if err != nil {
+				err = msgp.WrapError(err, "ListSubscribe")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
+		// write "416531"
+		err = en.Append(0xa6, 0x34, 0x31, 0x36, 0x35, 0x33, 0x31)
+		if err != nil {
+			return
+		}
+		if z.ListUnsubscribe == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteString(*z.ListUnsubscribe)
+			if err != nil {
+				err = msgp.WrapError(err, "ListUnsubscribe")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
+		// write "262733"
+		err = en.Append(0xa6, 0x32, 0x36, 0x32, 0x37, 0x33, 0x33)
+		if err != nil {
+			return
+		}
+		if z.LocaleId == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.LocaleId)
+			if err != nil {
+				err = msgp.WrapError(err, "LocaleId")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
 		// write "1488731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4105,7 +4758,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
 		// write "1486131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -4124,7 +4777,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
 		// write "1492631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -4143,7 +4796,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
+		// write "4088258"
+		err = en.Append(0xa7, 0x34, 0x30, 0x38, 0x38, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.MappingSignature)
+		if err != nil {
+			err = msgp.WrapError(err, "MappingSignature")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
 		// write "8811"
 		err = en.Append(0xa4, 0x38, 0x38, 0x31, 0x31)
 		if err != nil {
@@ -4162,7 +4827,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
 		// write "359064"
 		err = en.Append(0xa6, 0x33, 0x35, 0x39, 0x30, 0x36, 0x34)
 		if err != nil {
@@ -4181,7 +4846,26 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
+		// write "227933"
+		err = en.Append(0xa6, 0x32, 0x32, 0x37, 0x39, 0x33, 0x33)
+		if err != nil {
+			return
+		}
+		if z.MessageEditorFormat == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.MessageEditorFormat)
+			if err != nil {
+				err = msgp.WrapError(err, "MessageEditorFormat")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
 		// write "35913"
 		err = en.Append(0xa5, 0x33, 0x35, 0x39, 0x31, 0x33)
 		if err != nil {
@@ -4200,7 +4884,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
 		// write "1486331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4219,7 +4903,26 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
+		// write "163693"
+		err = en.Append(0xa6, 0x31, 0x36, 0x33, 0x36, 0x39, 0x33)
+		if err != nil {
+			return
+		}
+		if z.MessageLocaleId == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.MessageLocaleId)
+			if err != nil {
+				err = msgp.WrapError(err, "MessageLocaleId")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
 		// write "8911"
 		err = en.Append(0xa4, 0x38, 0x39, 0x31, 0x31)
 		if err != nil {
@@ -4238,7 +4941,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
 		// write "35923"
 		err = en.Append(0xa5, 0x33, 0x35, 0x39, 0x32, 0x33)
 		if err != nil {
@@ -4257,7 +4960,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
 		// write "359220"
 		err = en.Append(0xa6, 0x33, 0x35, 0x39, 0x32, 0x32, 0x30)
 		if err != nil {
@@ -4276,7 +4979,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
 		// write "36073"
 		err = en.Append(0xa5, 0x33, 0x36, 0x30, 0x37, 0x33)
 		if err != nil {
@@ -4295,7 +4998,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
+		// write "71258"
+		err = en.Append(0xa5, 0x37, 0x31, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.MessageSubmissionId)
+		if err != nil {
+			err = msgp.WrapError(err, "MessageSubmissionId")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
 		// write "8711"
 		err = en.Append(0xa4, 0x38, 0x37, 0x31, 0x31)
 		if err != nil {
@@ -4314,7 +5029,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
 		// write "1491631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -4333,7 +5048,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
 		// write "1487631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -4352,7 +5067,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
 		// write "1492731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x32, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4371,7 +5086,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
 		// write "30773"
 		err = en.Append(0xa5, 0x33, 0x30, 0x37, 0x37, 0x33)
 		if err != nil {
@@ -4390,7 +5105,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
 		// write "30763"
 		err = en.Append(0xa5, 0x33, 0x30, 0x37, 0x36, 0x33)
 		if err != nil {
@@ -4409,7 +5124,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
 		// write "30783"
 		err = en.Append(0xa5, 0x33, 0x30, 0x37, 0x38, 0x33)
 		if err != nil {
@@ -4428,7 +5143,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
 		// write "361331"
 		err = en.Append(0xa6, 0x33, 0x36, 0x31, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4447,7 +5162,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
 		// write "1487331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4466,7 +5181,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
 		// write "1486431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x36, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -4485,7 +5200,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
+		// write "76258"
+		err = en.Append(0xa5, 0x37, 0x36, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalAuthorEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalAuthorEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
 		// write "7731"
 		err = en.Append(0xa4, 0x37, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4504,7 +5231,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
 		// write "8564"
 		err = en.Append(0xa4, 0x38, 0x35, 0x36, 0x34)
 		if err != nil {
@@ -4523,7 +5250,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
 		// write "11431"
 		err = en.Append(0xa5, 0x31, 0x31, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -4542,7 +5269,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
 		// write "11531"
 		err = en.Append(0xa5, 0x31, 0x31, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4561,7 +5288,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
 		// write "11631"
 		err = en.Append(0xa5, 0x31, 0x31, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -4580,7 +5307,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
+		// write "14866258"
+		err = en.Append(0xa8, 0x31, 0x34, 0x38, 0x36, 0x36, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
 		// write "7531"
 		err = en.Append(0xa4, 0x37, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4599,7 +5338,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
 		// write "10231"
 		err = en.Append(0xa5, 0x31, 0x30, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -4618,7 +5357,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
 		// write "10331"
 		err = en.Append(0xa5, 0x31, 0x30, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4637,7 +5376,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
+		// write "91258"
+		err = en.Append(0xa5, 0x39, 0x31, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalSenderEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalSenderEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
 		// write "9031"
 		err = en.Append(0xa4, 0x39, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -4656,7 +5407,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
+		// write "92258"
+		err = en.Append(0xa5, 0x39, 0x32, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalSenderSearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalSenderSearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
 		// write "463"
 		err = en.Append(0xa3, 0x34, 0x36, 0x33)
 		if err != nil {
@@ -4675,7 +5438,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
 		// write "10431"
 		err = en.Append(0xa5, 0x31, 0x30, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -4694,7 +5457,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
 		// write "10531"
 		err = en.Append(0xa5, 0x31, 0x30, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4713,7 +5476,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
+		// write "94258"
+		err = en.Append(0xa5, 0x39, 0x34, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalSentRepresentingEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalSentRepresentingEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x200000000000) == 0 { // if not omitted
 		// write "9331"
 		err = en.Append(0xa4, 0x39, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4732,7 +5507,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000000) == 0 { // if not omitted
+		// write "95258"
+		err = en.Append(0xa5, 0x39, 0x35, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.OriginalSentRepresentingSearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "OriginalSentRepresentingSearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x800000000000) == 0 { // if not omitted
 		// write "7331"
 		err = en.Append(0xa4, 0x37, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4751,7 +5538,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000000000) == 0 { // if not omitted
 		// write "7864"
 		err = en.Append(0xa4, 0x37, 0x38, 0x36, 0x34)
 		if err != nil {
@@ -4770,7 +5557,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000000) == 0 { // if not omitted
 		// write "3511"
 		err = en.Append(0xa4, 0x33, 0x35, 0x31, 0x31)
 		if err != nil {
@@ -4789,7 +5576,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000000) == 0 { // if not omitted
 		// write "308011"
 		err = en.Append(0xa6, 0x33, 0x30, 0x38, 0x30, 0x31, 0x31)
 		if err != nil {
@@ -4808,7 +5595,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000000000) == 0 { // if not omitted
 		// write "1494331"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -4827,7 +5614,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000000000) == 0 { // if not omitted
 		// write "1494431"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -4846,7 +5633,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20000000000000) == 0 { // if not omitted
 		// write "1494531"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -4865,7 +5652,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000000000) == 0 { // if not omitted
 		// write "1494831"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -4884,7 +5671,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000000000) == 0 { // if not omitted
 		// write "1494631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -4903,7 +5690,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000000000) == 0 { // if not omitted
 		// write "1494731"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x34, 0x37, 0x33, 0x31)
 		if err != nil {
@@ -4922,7 +5709,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000000000000) == 0 { // if not omitted
 		// write "1487931"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x37, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -4941,7 +5728,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000000000) == 0 { // if not omitted
 		// write "1488131"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -4960,7 +5747,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800000000000000) == 0 { // if not omitted
+		// write "12313258"
+		err = en.Append(0xa8, 0x31, 0x32, 0x33, 0x31, 0x33, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.PolicyTag)
+		if err != nil {
+			err = msgp.WrapError(err, "PolicyTag")
+			return
+		}
+	}
+	if (zb0001Mask[1] & 0x1000000000000000) == 0 { // if not omitted
 		// write "383"
 		err = en.Append(0xa3, 0x33, 0x38, 0x33)
 		if err != nil {
@@ -4979,7 +5778,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000000000) == 0 { // if not omitted
 		// write "4111"
 		err = en.Append(0xa4, 0x34, 0x31, 0x31, 0x31)
 		if err != nil {
@@ -4998,7 +5797,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000000000) == 0 { // if not omitted
 		// write "4264"
 		err = en.Append(0xa4, 0x34, 0x32, 0x36, 0x34)
 		if err != nil {
@@ -5017,7 +5816,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000000000000) == 0 { // if not omitted
 		// write "11831"
 		err = en.Append(0xa5, 0x31, 0x31, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -5036,7 +5835,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1) == 0 { // if not omitted
+		// write "63258"
+		err = en.Append(0xa5, 0x36, 0x33, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ReceivedByEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "ReceivedByEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x2) == 0 { // if not omitted
 		// write "6431"
 		err = en.Append(0xa4, 0x36, 0x34, 0x33, 0x31)
 		if err != nil {
@@ -5055,7 +5866,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4) == 0 { // if not omitted
+		// write "81258"
+		err = en.Append(0xa5, 0x38, 0x31, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ReceivedBySearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "ReceivedBySearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x8) == 0 { // if not omitted
 		// write "11931"
 		err = en.Append(0xa5, 0x31, 0x31, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -5074,7 +5897,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10) == 0 { // if not omitted
 		// write "12031"
 		err = en.Append(0xa5, 0x31, 0x32, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -5093,7 +5916,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20) == 0 { // if not omitted
+		// write "67258"
+		err = en.Append(0xa5, 0x36, 0x37, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ReceivedRepresentingEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "ReceivedRepresentingEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x40) == 0 { // if not omitted
 		// write "6831"
 		err = en.Append(0xa4, 0x36, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -5112,7 +5947,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x80) == 0 { // if not omitted
+		// write "82258"
+		err = en.Append(0xa5, 0x38, 0x32, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.ReceivedRepresentingSearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "ReceivedRepresentingSearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x100) == 0 { // if not omitted
 		// write "30933"
 		err = en.Append(0xa5, 0x33, 0x30, 0x39, 0x33, 0x33)
 		if err != nil {
@@ -5131,7 +5978,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200) == 0 { // if not omitted
 		// write "310531"
 		err = en.Append(0xa6, 0x33, 0x31, 0x30, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -5150,7 +5997,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x400) == 0 { // if not omitted
 		// write "309511"
 		err = en.Append(0xa6, 0x33, 0x30, 0x39, 0x35, 0x31, 0x31)
 		if err != nil {
@@ -5169,7 +6016,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800) == 0 { // if not omitted
 		// write "12831"
 		err = en.Append(0xa5, 0x31, 0x32, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -5188,7 +6035,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1000) == 0 { // if not omitted
 		// write "12931"
 		err = en.Append(0xa5, 0x31, 0x32, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -5207,7 +6054,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x2000) == 0 { // if not omitted
 		// write "2665631"
 		err = en.Append(0xa7, 0x32, 0x36, 0x36, 0x35, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -5226,7 +6073,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000) == 0 { // if not omitted
 		// write "1231664"
 		err = en.Append(0xa7, 0x31, 0x32, 0x33, 0x31, 0x36, 0x36, 0x34)
 		if err != nil {
@@ -5245,7 +6092,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000) == 0 { // if not omitted
 		// write "123173"
 		err = en.Append(0xa6, 0x31, 0x32, 0x33, 0x31, 0x37, 0x33)
 		if err != nil {
@@ -5264,7 +6111,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000) == 0 { // if not omitted
 		// write "123143"
 		err = en.Append(0xa6, 0x31, 0x32, 0x33, 0x31, 0x34, 0x33)
 		if err != nil {
@@ -5283,7 +6130,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000) == 0 { // if not omitted
+		// write "4105258"
+		err = en.Append(0xa7, 0x34, 0x31, 0x30, 0x35, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.RtfCompressed)
+		if err != nil {
+			err = msgp.WrapError(err, "RtfCompressed")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x40000) == 0 { // if not omitted
 		// write "361511"
 		err = en.Append(0xa6, 0x33, 0x36, 0x31, 0x35, 0x31, 0x31)
 		if err != nil {
@@ -5302,7 +6161,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x80000) == 0 { // if not omitted
 		// write "310231"
 		err = en.Append(0xa6, 0x33, 0x31, 0x30, 0x32, 0x33, 0x31)
 		if err != nil {
@@ -5321,7 +6180,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x100000) == 0 { // if not omitted
 		// write "310331"
 		err = en.Append(0xa6, 0x33, 0x31, 0x30, 0x33, 0x33, 0x31)
 		if err != nil {
@@ -5340,7 +6199,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200000) == 0 { // if not omitted
+		// write "3097258"
+		err = en.Append(0xa7, 0x33, 0x30, 0x39, 0x37, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.SenderEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "SenderEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x400000) == 0 { // if not omitted
 		// write "165053"
 		err = en.Append(0xa6, 0x31, 0x36, 0x35, 0x30, 0x35, 0x33)
 		if err != nil {
@@ -5359,7 +6230,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800000) == 0 { // if not omitted
 		// write "309831"
 		err = en.Append(0xa6, 0x33, 0x30, 0x39, 0x38, 0x33, 0x31)
 		if err != nil {
@@ -5378,7 +6249,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1000000) == 0 { // if not omitted
+		// write "3101258"
+		err = en.Append(0xa7, 0x33, 0x31, 0x30, 0x31, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.SenderSearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "SenderSearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x2000000) == 0 { // if not omitted
 		// write "149613"
 		err = en.Append(0xa6, 0x31, 0x34, 0x39, 0x36, 0x31, 0x33)
 		if err != nil {
@@ -5397,7 +6280,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000000) == 0 { // if not omitted
 		// write "1491211"
 		err = en.Append(0xa7, 0x31, 0x34, 0x39, 0x31, 0x32, 0x31, 0x31)
 		if err != nil {
@@ -5416,7 +6299,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000000) == 0 { // if not omitted
 		// write "543"
 		err = en.Append(0xa3, 0x35, 0x34, 0x33)
 		if err != nil {
@@ -5435,7 +6318,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x1) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000000) == 0 { // if not omitted
 		// write "10031"
 		err = en.Append(0xa5, 0x31, 0x30, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -5454,7 +6337,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x2) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000000) == 0 { // if not omitted
 		// write "10131"
 		err = en.Append(0xa5, 0x31, 0x30, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -5473,7 +6356,38 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x4) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x40000000) == 0 { // if not omitted
+		// write "65258"
+		err = en.Append(0xa5, 0x36, 0x35, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.SentRepresentingEntryId)
+		if err != nil {
+			err = msgp.WrapError(err, "SentRepresentingEntryId")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x80000000) == 0 { // if not omitted
+		// write "164103"
+		err = en.Append(0xa6, 0x31, 0x36, 0x34, 0x31, 0x30, 0x33)
+		if err != nil {
+			return
+		}
+		if z.SentRepresentingFlags == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.SentRepresentingFlags)
+			if err != nil {
+				err = msgp.WrapError(err, "SentRepresentingFlags")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[2] & 0x100000000) == 0 { // if not omitted
 		// write "6631"
 		err = en.Append(0xa4, 0x36, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -5492,7 +6406,19 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x8) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200000000) == 0 { // if not omitted
+		// write "59258"
+		err = en.Append(0xa5, 0x35, 0x39, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.SentRepresentingSearchKey)
+		if err != nil {
+			err = msgp.WrapError(err, "SentRepresentingSearchKey")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x400000000) == 0 { // if not omitted
 		// write "1484631"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x34, 0x36, 0x33, 0x31)
 		if err != nil {
@@ -5511,7 +6437,38 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x10) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800000000) == 0 { // if not omitted
+		// write "12315258"
+		err = en.Append(0xa8, 0x31, 0x32, 0x33, 0x31, 0x35, 0x32, 0x35, 0x38)
+		if err != nil {
+			return
+		}
+		err = en.WriteBytes(z.StartDateEtc)
+		if err != nil {
+			err = msgp.WrapError(err, "StartDateEtc")
+			return
+		}
+	}
+	if (zb0001Mask[2] & 0x1000000000) == 0 { // if not omitted
+		// write "133253"
+		err = en.Append(0xa6, 0x31, 0x33, 0x33, 0x32, 0x35, 0x33)
+		if err != nil {
+			return
+		}
+		if z.StoreSupportMask == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.StoreSupportMask)
+			if err != nil {
+				err = msgp.WrapError(err, "StoreSupportMask")
+				return
+			}
+		}
+	}
+	if (zb0001Mask[2] & 0x2000000000) == 0 { // if not omitted
 		// write "5531"
 		err = en.Append(0xa4, 0x35, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -5530,7 +6487,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x20) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000000000) == 0 { // if not omitted
 		// write "6131"
 		err = en.Append(0xa4, 0x36, 0x31, 0x33, 0x31)
 		if err != nil {
@@ -5549,7 +6506,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x40) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000000000) == 0 { // if not omitted
 		// write "309931"
 		err = en.Append(0xa6, 0x33, 0x30, 0x39, 0x39, 0x33, 0x31)
 		if err != nil {
@@ -5568,7 +6525,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x80) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000000000) == 0 { // if not omitted
 		// write "1488031"
 		err = en.Append(0xa7, 0x31, 0x34, 0x38, 0x38, 0x30, 0x33, 0x31)
 		if err != nil {
@@ -5587,7 +6544,7 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
-	if (zb0001Mask[2] & 0x100) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000000000) == 0 { // if not omitted
 		// write "12531"
 		err = en.Append(0xa5, 0x31, 0x32, 0x35, 0x33, 0x31)
 		if err != nil {
@@ -5606,6 +6563,25 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 			}
 		}
 	}
+	if (zb0001Mask[2] & 0x40000000000) == 0 { // if not omitted
+		// write "286793"
+		err = en.Append(0xa6, 0x32, 0x38, 0x36, 0x37, 0x39, 0x33)
+		if err != nil {
+			return
+		}
+		if z.ViewDescriptorVersion == nil {
+			err = en.WriteNil()
+			if err != nil {
+				return
+			}
+		} else {
+			err = en.WriteInt32(*z.ViewDescriptorVersion)
+			if err != nil {
+				err = msgp.WrapError(err, "ViewDescriptorVersion")
+				return
+			}
+		}
+	}
 	return
 }
 
@@ -5613,8 +6589,8 @@ func (z *Message) EncodeMsg(en *msgp.Writer) (err error) {
 func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
 	// check for omitted fields
-	zb0001Len := uint32(137)
-	var zb0001Mask [3]uint64 /* 137 bits */
+	zb0001Len := uint32(171)
+	var zb0001Mask [3]uint64 /* 171 bits */
 	_ = zb0001Mask
 	if z.AutoProcessState == nil {
 		zb0001Len--
@@ -5692,437 +6668,573 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000
 	}
-	if z.Assistant == nil {
+	if z.ArchiveTag == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000
 	}
-	if z.AssistantTelephoneNumber == nil {
+	if z.Assistant == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000
 	}
-	if z.AutoResponseSuppress == nil {
+	if z.AssistantTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000
 	}
-	if z.BlockStatus == nil {
+	if z.AutoResponseSuppress == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000
 	}
-	if z.Body == nil {
+	if z.BlockStatus == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000
 	}
-	if z.BodyContentLocation == nil {
+	if z.Body == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000
 	}
-	if z.BodyHtml == nil {
+	if z.BodyContentLocation == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000
 	}
-	if z.ClientActivelyEditingUntil == nil {
+	if z.BodyHtml == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000
 	}
-	if z.ClientSubmitTime == nil {
+	if z.ClientActivelyEditingUntil == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000
 	}
-	if z.ContentFilterSpamConfidenceLevel == nil {
+	if z.ClientSubmitTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000
 	}
-	if z.ConversationTopic == nil {
+	if z.ContentFilterSpamConfidenceLevel == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000
 	}
-	if z.CreationTime == nil {
+	if z.ConversationIndex == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000000
 	}
-	if z.CreatorName == nil {
+	if z.ConversationTopic == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000000
 	}
-	if z.DeliverTime == nil {
+	if z.CreationTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000000
 	}
-	if z.DisplayBcc == nil {
+	if z.CreatorName == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000000
 	}
-	if z.DisplayCc == nil {
+	if z.DeliverTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000000
 	}
-	if z.DisplayTo == nil {
+	if z.DisplayBcc == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000000
 	}
-	if z.IconIndex == nil {
+	if z.DisplayCc == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000000
 	}
-	if z.Importance == nil {
+	if z.DisplayTo == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000000
 	}
-	if z.Initials == nil {
+	if z.FlagCompleteTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000000
 	}
-	if z.InReplyToId == nil {
+	if z.FlagStatus == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000000
 	}
-	if z.InternetMailOverrideFormat == nil {
+	if z.Html == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000000
 	}
-	if z.InternetMessageId == nil {
+	if z.IconIndex == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000000
 	}
-	if z.InternetReferences == nil {
+	if z.Importance == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x10000000000000
 	}
-	if z.IsdnNumber == nil {
+	if z.Initials == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x20000000000000
 	}
-	if z.Keyword == nil {
+	if z.InReplyToId == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x40000000000000
 	}
-	if z.Language == nil {
+	if z.InternetCodepage == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x80000000000000
 	}
-	if z.LastModificationTime == nil {
+	if z.InternetMailOverrideFormat == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x100000000000000
 	}
-	if z.Locality == nil {
+	if z.InternetMessageId == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x200000000000000
 	}
-	if z.Location == nil {
+	if z.InternetReferences == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x400000000000000
 	}
-	if z.ManagerName == nil {
+	if z.IsdnNumber == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x800000000000000
 	}
-	if z.MessageCcMe == nil {
+	if z.Keyword == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x1000000000000000
 	}
-	if z.MessageDeliveryTime == nil {
+	if z.Language == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x2000000000000000
 	}
-	if z.MessageFlags == nil {
+	if z.LastModificationTime == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x4000000000000000
 	}
-	if z.MessageHandlingSystemCommonName == nil {
+	if z.ListHelp == nil {
 		zb0001Len--
 		zb0001Mask[0] |= 0x8000000000000000
 	}
-	if z.MessageRecipientMe == nil {
+	if z.ListSubscribe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1
 	}
-	if z.MessageSize == nil {
+	if z.ListUnsubscribe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2
 	}
-	if z.MessageSizeExtended == nil {
+	if z.LocaleId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4
 	}
-	if z.MessageStatus == nil {
+	if z.Locality == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8
 	}
-	if z.MessageToMe == nil {
+	if z.Location == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10
 	}
-	if z.MiddleName == nil {
+	if z.ManagerName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20
 	}
-	if z.MobileTelephoneNumber == nil {
+	if z.MappingSignature == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40
 	}
-	if z.Nickname == nil {
+	if z.MessageCcMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80
 	}
-	if z.NonDeliveryReportDiagCode == nil {
+	if z.MessageDeliveryTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100
 	}
-	if z.NonDeliveryReportReasonCode == nil {
+	if z.MessageEditorFormat == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200
 	}
-	if z.NonDeliveryReportStatusCode == nil {
+	if z.MessageFlags == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400
 	}
-	if z.NormalizedSubject == nil {
+	if z.MessageHandlingSystemCommonName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800
 	}
-	if z.OfficeLocation == nil {
+	if z.MessageLocaleId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000
 	}
-	if z.OrganizationalIdNumber == nil {
+	if z.MessageRecipientMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000
 	}
-	if z.OriginalAuthorName == nil {
+	if z.MessageSize == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000
 	}
-	if z.OriginalDeliveryTime == nil {
+	if z.MessageSizeExtended == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000
 	}
-	if z.OriginalDisplayBcc == nil {
+	if z.MessageStatus == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000
 	}
-	if z.OriginalDisplayCc == nil {
+	if z.MessageSubmissionId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000
 	}
-	if z.OriginalDisplayTo == nil {
+	if z.MessageToMe == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000
 	}
-	if z.OriginalMessageClass == nil {
+	if z.MiddleName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000
 	}
-	if z.OriginalSenderAddressType == nil {
+	if z.MobileTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000
 	}
-	if z.OriginalSenderEmailAddress == nil {
+	if z.Nickname == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000
 	}
-	if z.OriginalSenderName == nil {
+	if z.NonDeliveryReportDiagCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000
 	}
-	if z.OriginalSensitivity == nil {
+	if z.NonDeliveryReportReasonCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000
 	}
-	if z.OriginalSentRepresentingAddressType == nil {
+	if z.NonDeliveryReportStatusCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000
 	}
-	if z.OriginalSentRepresentingEmailAddress == nil {
+	if z.NormalizedSubject == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000
 	}
-	if z.OriginalSentRepresentingName == nil {
+	if z.OfficeLocation == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000
 	}
-	if z.OriginalSubject == nil {
+	if z.OrganizationalIdNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000
 	}
-	if z.OriginalSubmitTime == nil {
+	if z.OriginalAuthorEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000
 	}
-	if z.OriginatorDeliveryReportRequested == nil {
+	if z.OriginalAuthorName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000
 	}
-	if z.OriginatorNonDeliveryReportRequested == nil {
+	if z.OriginalDeliveryTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000
 	}
-	if z.OtherAddressCity == nil {
+	if z.OriginalDisplayBcc == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000
 	}
-	if z.OtherAddressCountry == nil {
+	if z.OriginalDisplayCc == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000
 	}
-	if z.OtherAddressPostalCode == nil {
+	if z.OriginalDisplayTo == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000
 	}
-	if z.OtherAddressPostOfficeBox == nil {
+	if z.OriginalEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000
 	}
-	if z.OtherAddressStateOrProvince == nil {
+	if z.OriginalMessageClass == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000
 	}
-	if z.OtherAddressStreet == nil {
+	if z.OriginalSenderAddressType == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000
 	}
-	if z.OtherTelephoneNumber == nil {
+	if z.OriginalSenderEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000
 	}
-	if z.PagerTelephoneNumber == nil {
+	if z.OriginalSenderEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000
 	}
-	if z.Priority == nil {
+	if z.OriginalSenderName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000
 	}
-	if z.ReadReceiptRequested == nil {
+	if z.OriginalSenderSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000000
 	}
-	if z.ReceiptTime == nil {
+	if z.OriginalSensitivity == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000000
 	}
-	if z.ReceivedByEmailAddress == nil {
+	if z.OriginalSentRepresentingAddressType == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000000
 	}
-	if z.ReceivedByName == nil {
+	if z.OriginalSentRepresentingEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000000
 	}
-	if z.ReceivedRepresentingAddressType == nil {
+	if z.OriginalSentRepresentingEntryId == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000000
 	}
-	if z.ReceivedRepresentingEmailAddress == nil {
+	if z.OriginalSentRepresentingName == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000000
 	}
-	if z.ReceivedRepresentingName == nil {
+	if z.OriginalSentRepresentingSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000000
 	}
-	if z.RecipientType == nil {
+	if z.OriginalSubject == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000000
 	}
-	if z.RemoteMessageTransferAgent == nil {
+	if z.OriginalSubmitTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000000
 	}
-	if z.ReplyRequested == nil {
+	if z.OriginatorDeliveryReportRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000000
 	}
-	if z.ReportDisposition == nil {
+	if z.OriginatorNonDeliveryReportRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000000
 	}
-	if z.ReportDispositionMode == nil {
+	if z.OtherAddressCity == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000000
 	}
-	if z.ReportingMessageTransferAgent == nil {
+	if z.OtherAddressCountry == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x10000000000000
 	}
-	if z.RetentionDate == nil {
+	if z.OtherAddressPostalCode == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x20000000000000
 	}
-	if z.RetentionFlags == nil {
+	if z.OtherAddressPostOfficeBox == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x40000000000000
 	}
-	if z.RetentionPeriod == nil {
+	if z.OtherAddressStateOrProvince == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x80000000000000
 	}
-	if z.RtfInSync == nil {
+	if z.OtherAddressStreet == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x100000000000000
 	}
-	if z.SenderAddressType == nil {
+	if z.OtherTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x200000000000000
 	}
-	if z.SenderEmailAddress == nil {
+	if z.PagerTelephoneNumber == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x400000000000000
 	}
-	if z.SenderIdStatus == nil {
+	if z.PolicyTag == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x800000000000000
 	}
-	if z.SenderName == nil {
+	if z.Priority == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x1000000000000000
 	}
-	if z.SendInternetEncoding == nil {
+	if z.ReadReceiptRequested == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x2000000000000000
 	}
-	if z.SendRichInfo == nil {
+	if z.ReceiptTime == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x4000000000000000
 	}
-	if z.Sensitivity == nil {
+	if z.ReceivedByEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[1] |= 0x8000000000000000
 	}
-	if z.SentRepresentingAddressType == nil {
+	if z.ReceivedByEntryId == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x1
 	}
-	if z.SentRepresentingEmailAddress == nil {
+	if z.ReceivedByName == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x2
 	}
-	if z.SentRepresentingName == nil {
+	if z.ReceivedBySearchKey == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x4
 	}
-	if z.SmtpAddress == nil {
+	if z.ReceivedRepresentingAddressType == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x8
 	}
-	if z.Subject == nil {
+	if z.ReceivedRepresentingEmailAddress == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x10
 	}
-	if z.SubjectPrefix == nil {
+	if z.ReceivedRepresentingEntryId == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x20
 	}
-	if z.SupplementaryInfo == nil {
+	if z.ReceivedRepresentingName == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x40
 	}
-	if z.TransmittableDisplayName == nil {
+	if z.ReceivedRepresentingSearchKey == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x80
 	}
-	if z.TransportMessageHeaders == nil {
+	if z.RecipientType == nil {
 		zb0001Len--
 		zb0001Mask[2] |= 0x100
+	}
+	if z.RemoteMessageTransferAgent == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200
+	}
+	if z.ReplyRequested == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400
+	}
+	if z.ReportDisposition == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800
+	}
+	if z.ReportDispositionMode == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000
+	}
+	if z.ReportingMessageTransferAgent == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000
+	}
+	if z.RetentionDate == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000
+	}
+	if z.RetentionFlags == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000
+	}
+	if z.RetentionPeriod == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000
+	}
+	if z.RtfCompressed == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000
+	}
+	if z.RtfInSync == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000
+	}
+	if z.SenderAddressType == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x80000
+	}
+	if z.SenderEmailAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x100000
+	}
+	if z.SenderEntryId == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200000
+	}
+	if z.SenderIdStatus == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400000
+	}
+	if z.SenderName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800000
+	}
+	if z.SenderSearchKey == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000000
+	}
+	if z.SendInternetEncoding == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000000
+	}
+	if z.SendRichInfo == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000000
+	}
+	if z.Sensitivity == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000000
+	}
+	if z.SentRepresentingAddressType == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000000
+	}
+	if z.SentRepresentingEmailAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000000
+	}
+	if z.SentRepresentingEntryId == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000000
+	}
+	if z.SentRepresentingFlags == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x80000000
+	}
+	if z.SentRepresentingName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x100000000
+	}
+	if z.SentRepresentingSearchKey == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x200000000
+	}
+	if z.SmtpAddress == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x400000000
+	}
+	if z.StartDateEtc == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x800000000
+	}
+	if z.StoreSupportMask == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x1000000000
+	}
+	if z.Subject == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x2000000000
+	}
+	if z.SubjectPrefix == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x4000000000
+	}
+	if z.SupplementaryInfo == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x8000000000
+	}
+	if z.TransmittableDisplayName == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x10000000000
+	}
+	if z.TransportMessageHeaders == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x20000000000
+	}
+	if z.ViewDescriptorVersion == nil {
+		zb0001Len--
+		zb0001Mask[2] |= 0x40000000000
 	}
 	// variable map header, size zb0001Len
 	o = msgp.AppendMapHeader(o, zb0001Len)
@@ -6371,6 +7483,11 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 		}
 	}
 	if (zb0001Mask[0] & 0x20000000) == 0 { // if not omitted
+		// string "12312258"
+		o = append(o, 0xa8, 0x31, 0x32, 0x33, 0x31, 0x32, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ArchiveTag)
+	}
+	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
 		// string "1489631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x36, 0x33, 0x31)
 		if z.Assistant == nil {
@@ -6379,7 +7496,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Assistant)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
 		// string "1489431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x34, 0x33, 0x31)
 		if z.AssistantTelephoneNumber == nil {
@@ -6388,7 +7505,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.AssistantTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
 		// string "163513"
 		o = append(o, 0xa6, 0x31, 0x36, 0x33, 0x35, 0x31, 0x33)
 		if z.AutoResponseSuppress == nil {
@@ -6397,7 +7514,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.AutoResponseSuppress)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
 		// string "42463"
 		o = append(o, 0xa5, 0x34, 0x32, 0x34, 0x36, 0x33)
 		if z.BlockStatus == nil {
@@ -6406,7 +7523,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.BlockStatus)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
 		// string "409631"
 		o = append(o, 0xa6, 0x34, 0x30, 0x39, 0x36, 0x33, 0x31)
 		if z.Body == nil {
@@ -6415,7 +7532,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Body)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
 		// string "411631"
 		o = append(o, 0xa6, 0x34, 0x31, 0x31, 0x36, 0x33, 0x31)
 		if z.BodyContentLocation == nil {
@@ -6424,7 +7541,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.BodyContentLocation)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
 		// string "411531"
 		o = append(o, 0xa6, 0x34, 0x31, 0x31, 0x35, 0x33, 0x31)
 		if z.BodyHtml == nil {
@@ -6433,7 +7550,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.BodyHtml)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
 		// string "1408064"
 		o = append(o, 0xa7, 0x31, 0x34, 0x30, 0x38, 0x30, 0x36, 0x34)
 		if z.ClientActivelyEditingUntil == nil {
@@ -6442,7 +7559,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.ClientActivelyEditingUntil)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
 		// string "5764"
 		o = append(o, 0xa4, 0x35, 0x37, 0x36, 0x34)
 		if z.ClientSubmitTime == nil {
@@ -6451,7 +7568,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.ClientSubmitTime)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
 		// string "165023"
 		o = append(o, 0xa6, 0x31, 0x36, 0x35, 0x30, 0x32, 0x33)
 		if z.ContentFilterSpamConfidenceLevel == nil {
@@ -6460,7 +7577,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.ContentFilterSpamConfidenceLevel)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
+		// string "113258"
+		o = append(o, 0xa6, 0x31, 0x31, 0x33, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ConversationIndex)
+	}
+	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
 		// string "11231"
 		o = append(o, 0xa5, 0x31, 0x31, 0x32, 0x33, 0x31)
 		if z.ConversationTopic == nil {
@@ -6469,7 +7591,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ConversationTopic)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
 		// string "1229564"
 		o = append(o, 0xa7, 0x31, 0x32, 0x32, 0x39, 0x35, 0x36, 0x34)
 		if z.CreationTime == nil {
@@ -6478,7 +7600,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.CreationTime)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
 		// string "1637631"
 		o = append(o, 0xa7, 0x31, 0x36, 0x33, 0x37, 0x36, 0x33, 0x31)
 		if z.CreatorName == nil {
@@ -6487,7 +7609,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.CreatorName)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
 		// string "1664"
 		o = append(o, 0xa4, 0x31, 0x36, 0x36, 0x34)
 		if z.DeliverTime == nil {
@@ -6496,7 +7618,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.DeliverTime)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
 		// string "358631"
 		o = append(o, 0xa6, 0x33, 0x35, 0x38, 0x36, 0x33, 0x31)
 		if z.DisplayBcc == nil {
@@ -6505,7 +7627,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DisplayBcc)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
 		// string "358731"
 		o = append(o, 0xa6, 0x33, 0x35, 0x38, 0x37, 0x33, 0x31)
 		if z.DisplayCc == nil {
@@ -6514,7 +7636,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DisplayCc)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
 		// string "358831"
 		o = append(o, 0xa6, 0x33, 0x35, 0x38, 0x38, 0x33, 0x31)
 		if z.DisplayTo == nil {
@@ -6523,7 +7645,30 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.DisplayTo)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
+		// string "424164"
+		o = append(o, 0xa6, 0x34, 0x32, 0x34, 0x31, 0x36, 0x34)
+		if z.FlagCompleteTime == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt64(o, *z.FlagCompleteTime)
+		}
+	}
+	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
+		// string "42403"
+		o = append(o, 0xa5, 0x34, 0x32, 0x34, 0x30, 0x33)
+		if z.FlagStatus == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.FlagStatus)
+		}
+	}
+	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
+		// string "4115258"
+		o = append(o, 0xa7, 0x34, 0x31, 0x31, 0x35, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.Html)
+	}
+	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
 		// string "42243"
 		o = append(o, 0xa5, 0x34, 0x32, 0x32, 0x34, 0x33)
 		if z.IconIndex == nil {
@@ -6532,7 +7677,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.IconIndex)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
 		// string "233"
 		o = append(o, 0xa3, 0x32, 0x33, 0x33)
 		if z.Importance == nil {
@@ -6541,7 +7686,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.Importance)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
 		// string "1485831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x38, 0x33, 0x31)
 		if z.Initials == nil {
@@ -6550,7 +7695,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Initials)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
 		// string "416231"
 		o = append(o, 0xa6, 0x34, 0x31, 0x36, 0x32, 0x33, 0x31)
 		if z.InReplyToId == nil {
@@ -6559,7 +7704,16 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.InReplyToId)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
+		// string "163503"
+		o = append(o, 0xa6, 0x31, 0x36, 0x33, 0x35, 0x30, 0x33)
+		if z.InternetCodepage == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.InternetCodepage)
+		}
+	}
+	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
 		// string "227863"
 		o = append(o, 0xa6, 0x32, 0x32, 0x37, 0x38, 0x36, 0x33)
 		if z.InternetMailOverrideFormat == nil {
@@ -6568,7 +7722,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.InternetMailOverrideFormat)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
 		// string "414931"
 		o = append(o, 0xa6, 0x34, 0x31, 0x34, 0x39, 0x33, 0x31)
 		if z.InternetMessageId == nil {
@@ -6577,7 +7731,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.InternetMessageId)
 		}
 	}
-	if (zb0001Mask[0] & 0x10000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
 		// string "415331"
 		o = append(o, 0xa6, 0x34, 0x31, 0x35, 0x33, 0x33, 0x31)
 		if z.InternetReferences == nil {
@@ -6586,7 +7740,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.InternetReferences)
 		}
 	}
-	if (zb0001Mask[0] & 0x20000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
 		// string "1489331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x39, 0x33, 0x33, 0x31)
 		if z.IsdnNumber == nil {
@@ -6595,7 +7749,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.IsdnNumber)
 		}
 	}
-	if (zb0001Mask[0] & 0x40000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x1000000000000000) == 0 { // if not omitted
 		// string "1485931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x35, 0x39, 0x33, 0x31)
 		if z.Keyword == nil {
@@ -6604,7 +7758,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Keyword)
 		}
 	}
-	if (zb0001Mask[0] & 0x80000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x2000000000000000) == 0 { // if not omitted
 		// string "1486031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x30, 0x33, 0x31)
 		if z.Language == nil {
@@ -6613,7 +7767,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Language)
 		}
 	}
-	if (zb0001Mask[0] & 0x100000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
 		// string "1229664"
 		o = append(o, 0xa7, 0x31, 0x32, 0x32, 0x39, 0x36, 0x36, 0x34)
 		if z.LastModificationTime == nil {
@@ -6622,7 +7776,43 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.LastModificationTime)
 		}
 	}
-	if (zb0001Mask[0] & 0x200000000000000) == 0 { // if not omitted
+	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
+		// string "416331"
+		o = append(o, 0xa6, 0x34, 0x31, 0x36, 0x33, 0x33, 0x31)
+		if z.ListHelp == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendString(o, *z.ListHelp)
+		}
+	}
+	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
+		// string "416431"
+		o = append(o, 0xa6, 0x34, 0x31, 0x36, 0x34, 0x33, 0x31)
+		if z.ListSubscribe == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendString(o, *z.ListSubscribe)
+		}
+	}
+	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
+		// string "416531"
+		o = append(o, 0xa6, 0x34, 0x31, 0x36, 0x35, 0x33, 0x31)
+		if z.ListUnsubscribe == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendString(o, *z.ListUnsubscribe)
+		}
+	}
+	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
+		// string "262733"
+		o = append(o, 0xa6, 0x32, 0x36, 0x32, 0x37, 0x33, 0x33)
+		if z.LocaleId == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.LocaleId)
+		}
+	}
+	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
 		// string "1488731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x37, 0x33, 0x31)
 		if z.Locality == nil {
@@ -6631,7 +7821,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Locality)
 		}
 	}
-	if (zb0001Mask[0] & 0x400000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
 		// string "1486131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x31, 0x33, 0x31)
 		if z.Location == nil {
@@ -6640,7 +7830,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Location)
 		}
 	}
-	if (zb0001Mask[0] & 0x800000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
 		// string "1492631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x36, 0x33, 0x31)
 		if z.ManagerName == nil {
@@ -6649,7 +7839,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ManagerName)
 		}
 	}
-	if (zb0001Mask[0] & 0x1000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
+		// string "4088258"
+		o = append(o, 0xa7, 0x34, 0x30, 0x38, 0x38, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.MappingSignature)
+	}
+	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
 		// string "8811"
 		o = append(o, 0xa4, 0x38, 0x38, 0x31, 0x31)
 		if z.MessageCcMe == nil {
@@ -6658,7 +7853,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.MessageCcMe)
 		}
 	}
-	if (zb0001Mask[0] & 0x2000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
 		// string "359064"
 		o = append(o, 0xa6, 0x33, 0x35, 0x39, 0x30, 0x36, 0x34)
 		if z.MessageDeliveryTime == nil {
@@ -6667,7 +7862,16 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.MessageDeliveryTime)
 		}
 	}
-	if (zb0001Mask[0] & 0x4000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
+		// string "227933"
+		o = append(o, 0xa6, 0x32, 0x32, 0x37, 0x39, 0x33, 0x33)
+		if z.MessageEditorFormat == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.MessageEditorFormat)
+		}
+	}
+	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
 		// string "35913"
 		o = append(o, 0xa5, 0x33, 0x35, 0x39, 0x31, 0x33)
 		if z.MessageFlags == nil {
@@ -6676,7 +7880,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.MessageFlags)
 		}
 	}
-	if (zb0001Mask[0] & 0x8000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
 		// string "1486331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x33, 0x33, 0x31)
 		if z.MessageHandlingSystemCommonName == nil {
@@ -6685,7 +7889,16 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.MessageHandlingSystemCommonName)
 		}
 	}
-	if (zb0001Mask[1] & 0x1) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
+		// string "163693"
+		o = append(o, 0xa6, 0x31, 0x36, 0x33, 0x36, 0x39, 0x33)
+		if z.MessageLocaleId == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.MessageLocaleId)
+		}
+	}
+	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
 		// string "8911"
 		o = append(o, 0xa4, 0x38, 0x39, 0x31, 0x31)
 		if z.MessageRecipientMe == nil {
@@ -6694,7 +7907,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.MessageRecipientMe)
 		}
 	}
-	if (zb0001Mask[1] & 0x2) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
 		// string "35923"
 		o = append(o, 0xa5, 0x33, 0x35, 0x39, 0x32, 0x33)
 		if z.MessageSize == nil {
@@ -6703,7 +7916,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.MessageSize)
 		}
 	}
-	if (zb0001Mask[1] & 0x4) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
 		// string "359220"
 		o = append(o, 0xa6, 0x33, 0x35, 0x39, 0x32, 0x32, 0x30)
 		if z.MessageSizeExtended == nil {
@@ -6712,7 +7925,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendFloat64(o, *z.MessageSizeExtended)
 		}
 	}
-	if (zb0001Mask[1] & 0x8) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
 		// string "36073"
 		o = append(o, 0xa5, 0x33, 0x36, 0x30, 0x37, 0x33)
 		if z.MessageStatus == nil {
@@ -6721,7 +7934,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.MessageStatus)
 		}
 	}
-	if (zb0001Mask[1] & 0x10) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
+		// string "71258"
+		o = append(o, 0xa5, 0x37, 0x31, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.MessageSubmissionId)
+	}
+	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
 		// string "8711"
 		o = append(o, 0xa4, 0x38, 0x37, 0x31, 0x31)
 		if z.MessageToMe == nil {
@@ -6730,7 +7948,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.MessageToMe)
 		}
 	}
-	if (zb0001Mask[1] & 0x20) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
 		// string "1491631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x36, 0x33, 0x31)
 		if z.MiddleName == nil {
@@ -6739,7 +7957,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.MiddleName)
 		}
 	}
-	if (zb0001Mask[1] & 0x40) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
 		// string "1487631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x36, 0x33, 0x31)
 		if z.MobileTelephoneNumber == nil {
@@ -6748,7 +7966,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.MobileTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x80) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
 		// string "1492731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x32, 0x37, 0x33, 0x31)
 		if z.Nickname == nil {
@@ -6757,7 +7975,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Nickname)
 		}
 	}
-	if (zb0001Mask[1] & 0x100) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
 		// string "30773"
 		o = append(o, 0xa5, 0x33, 0x30, 0x37, 0x37, 0x33)
 		if z.NonDeliveryReportDiagCode == nil {
@@ -6766,7 +7984,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NonDeliveryReportDiagCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x200) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
 		// string "30763"
 		o = append(o, 0xa5, 0x33, 0x30, 0x37, 0x36, 0x33)
 		if z.NonDeliveryReportReasonCode == nil {
@@ -6775,7 +7993,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NonDeliveryReportReasonCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x400) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
 		// string "30783"
 		o = append(o, 0xa5, 0x33, 0x30, 0x37, 0x38, 0x33)
 		if z.NonDeliveryReportStatusCode == nil {
@@ -6784,7 +8002,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.NonDeliveryReportStatusCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x800) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
 		// string "361331"
 		o = append(o, 0xa6, 0x33, 0x36, 0x31, 0x33, 0x33, 0x31)
 		if z.NormalizedSubject == nil {
@@ -6793,7 +8011,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.NormalizedSubject)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
 		// string "1487331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x33, 0x33, 0x31)
 		if z.OfficeLocation == nil {
@@ -6802,7 +8020,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OfficeLocation)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
 		// string "1486431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x36, 0x34, 0x33, 0x31)
 		if z.OrganizationalIdNumber == nil {
@@ -6811,7 +8029,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OrganizationalIdNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
+		// string "76258"
+		o = append(o, 0xa5, 0x37, 0x36, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalAuthorEntryId)
+	}
+	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
 		// string "7731"
 		o = append(o, 0xa4, 0x37, 0x37, 0x33, 0x31)
 		if z.OriginalAuthorName == nil {
@@ -6820,7 +8043,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalAuthorName)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
 		// string "8564"
 		o = append(o, 0xa4, 0x38, 0x35, 0x36, 0x34)
 		if z.OriginalDeliveryTime == nil {
@@ -6829,7 +8052,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.OriginalDeliveryTime)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
 		// string "11431"
 		o = append(o, 0xa5, 0x31, 0x31, 0x34, 0x33, 0x31)
 		if z.OriginalDisplayBcc == nil {
@@ -6838,7 +8061,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalDisplayBcc)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
 		// string "11531"
 		o = append(o, 0xa5, 0x31, 0x31, 0x35, 0x33, 0x31)
 		if z.OriginalDisplayCc == nil {
@@ -6847,7 +8070,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalDisplayCc)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
 		// string "11631"
 		o = append(o, 0xa5, 0x31, 0x31, 0x36, 0x33, 0x31)
 		if z.OriginalDisplayTo == nil {
@@ -6856,7 +8079,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalDisplayTo)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
+		// string "14866258"
+		o = append(o, 0xa8, 0x31, 0x34, 0x38, 0x36, 0x36, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalEntryId)
+	}
+	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
 		// string "7531"
 		o = append(o, 0xa4, 0x37, 0x35, 0x33, 0x31)
 		if z.OriginalMessageClass == nil {
@@ -6865,7 +8093,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalMessageClass)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
 		// string "10231"
 		o = append(o, 0xa5, 0x31, 0x30, 0x32, 0x33, 0x31)
 		if z.OriginalSenderAddressType == nil {
@@ -6874,7 +8102,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSenderAddressType)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
 		// string "10331"
 		o = append(o, 0xa5, 0x31, 0x30, 0x33, 0x33, 0x31)
 		if z.OriginalSenderEmailAddress == nil {
@@ -6883,7 +8111,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSenderEmailAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
+		// string "91258"
+		o = append(o, 0xa5, 0x39, 0x31, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalSenderEntryId)
+	}
+	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
 		// string "9031"
 		o = append(o, 0xa4, 0x39, 0x30, 0x33, 0x31)
 		if z.OriginalSenderName == nil {
@@ -6892,7 +8125,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSenderName)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
+		// string "92258"
+		o = append(o, 0xa5, 0x39, 0x32, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalSenderSearchKey)
+	}
+	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
 		// string "463"
 		o = append(o, 0xa3, 0x34, 0x36, 0x33)
 		if z.OriginalSensitivity == nil {
@@ -6901,7 +8139,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.OriginalSensitivity)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
 		// string "10431"
 		o = append(o, 0xa5, 0x31, 0x30, 0x34, 0x33, 0x31)
 		if z.OriginalSentRepresentingAddressType == nil {
@@ -6910,7 +8148,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSentRepresentingAddressType)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
 		// string "10531"
 		o = append(o, 0xa5, 0x31, 0x30, 0x35, 0x33, 0x31)
 		if z.OriginalSentRepresentingEmailAddress == nil {
@@ -6919,7 +8157,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSentRepresentingEmailAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
+		// string "94258"
+		o = append(o, 0xa5, 0x39, 0x34, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalSentRepresentingEntryId)
+	}
+	if (zb0001Mask[1] & 0x200000000000) == 0 { // if not omitted
 		// string "9331"
 		o = append(o, 0xa4, 0x39, 0x33, 0x33, 0x31)
 		if z.OriginalSentRepresentingName == nil {
@@ -6928,7 +8171,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSentRepresentingName)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000000) == 0 { // if not omitted
+		// string "95258"
+		o = append(o, 0xa5, 0x39, 0x35, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.OriginalSentRepresentingSearchKey)
+	}
+	if (zb0001Mask[1] & 0x800000000000) == 0 { // if not omitted
 		// string "7331"
 		o = append(o, 0xa4, 0x37, 0x33, 0x33, 0x31)
 		if z.OriginalSubject == nil {
@@ -6937,7 +8185,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OriginalSubject)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x1000000000000) == 0 { // if not omitted
 		// string "7864"
 		o = append(o, 0xa4, 0x37, 0x38, 0x36, 0x34)
 		if z.OriginalSubmitTime == nil {
@@ -6946,7 +8194,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.OriginalSubmitTime)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000000) == 0 { // if not omitted
 		// string "3511"
 		o = append(o, 0xa4, 0x33, 0x35, 0x31, 0x31)
 		if z.OriginatorDeliveryReportRequested == nil {
@@ -6955,7 +8203,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.OriginatorDeliveryReportRequested)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000000) == 0 { // if not omitted
 		// string "308011"
 		o = append(o, 0xa6, 0x33, 0x30, 0x38, 0x30, 0x31, 0x31)
 		if z.OriginatorNonDeliveryReportRequested == nil {
@@ -6964,7 +8212,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.OriginatorNonDeliveryReportRequested)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000000000) == 0 { // if not omitted
 		// string "1494331"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x33, 0x33, 0x31)
 		if z.OtherAddressCity == nil {
@@ -6973,7 +8221,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressCity)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x10000000000000) == 0 { // if not omitted
 		// string "1494431"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x34, 0x33, 0x31)
 		if z.OtherAddressCountry == nil {
@@ -6982,7 +8230,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressCountry)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x20000000000000) == 0 { // if not omitted
 		// string "1494531"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x35, 0x33, 0x31)
 		if z.OtherAddressPostalCode == nil {
@@ -6991,7 +8239,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressPostalCode)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x40000000000000) == 0 { // if not omitted
 		// string "1494831"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x38, 0x33, 0x31)
 		if z.OtherAddressPostOfficeBox == nil {
@@ -7000,7 +8248,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressPostOfficeBox)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x80000000000000) == 0 { // if not omitted
 		// string "1494631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x36, 0x33, 0x31)
 		if z.OtherAddressStateOrProvince == nil {
@@ -7009,7 +8257,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressStateOrProvince)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x100000000000000) == 0 { // if not omitted
 		// string "1494731"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x34, 0x37, 0x33, 0x31)
 		if z.OtherAddressStreet == nil {
@@ -7018,7 +8266,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherAddressStreet)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x200000000000000) == 0 { // if not omitted
 		// string "1487931"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x37, 0x39, 0x33, 0x31)
 		if z.OtherTelephoneNumber == nil {
@@ -7027,7 +8275,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.OtherTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x400000000000000) == 0 { // if not omitted
 		// string "1488131"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x31, 0x33, 0x31)
 		if z.PagerTelephoneNumber == nil {
@@ -7036,7 +8284,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.PagerTelephoneNumber)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x800000000000000) == 0 { // if not omitted
+		// string "12313258"
+		o = append(o, 0xa8, 0x31, 0x32, 0x33, 0x31, 0x33, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.PolicyTag)
+	}
+	if (zb0001Mask[1] & 0x1000000000000000) == 0 { // if not omitted
 		// string "383"
 		o = append(o, 0xa3, 0x33, 0x38, 0x33)
 		if z.Priority == nil {
@@ -7045,7 +8298,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.Priority)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x2000000000000000) == 0 { // if not omitted
 		// string "4111"
 		o = append(o, 0xa4, 0x34, 0x31, 0x31, 0x31)
 		if z.ReadReceiptRequested == nil {
@@ -7054,7 +8307,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.ReadReceiptRequested)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x4000000000000000) == 0 { // if not omitted
 		// string "4264"
 		o = append(o, 0xa4, 0x34, 0x32, 0x36, 0x34)
 		if z.ReceiptTime == nil {
@@ -7063,7 +8316,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.ReceiptTime)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000) == 0 { // if not omitted
+	if (zb0001Mask[1] & 0x8000000000000000) == 0 { // if not omitted
 		// string "11831"
 		o = append(o, 0xa5, 0x31, 0x31, 0x38, 0x33, 0x31)
 		if z.ReceivedByEmailAddress == nil {
@@ -7072,7 +8325,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReceivedByEmailAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1) == 0 { // if not omitted
+		// string "63258"
+		o = append(o, 0xa5, 0x36, 0x33, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ReceivedByEntryId)
+	}
+	if (zb0001Mask[2] & 0x2) == 0 { // if not omitted
 		// string "6431"
 		o = append(o, 0xa4, 0x36, 0x34, 0x33, 0x31)
 		if z.ReceivedByName == nil {
@@ -7081,7 +8339,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReceivedByName)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4) == 0 { // if not omitted
+		// string "81258"
+		o = append(o, 0xa5, 0x38, 0x31, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ReceivedBySearchKey)
+	}
+	if (zb0001Mask[2] & 0x8) == 0 { // if not omitted
 		// string "11931"
 		o = append(o, 0xa5, 0x31, 0x31, 0x39, 0x33, 0x31)
 		if z.ReceivedRepresentingAddressType == nil {
@@ -7090,7 +8353,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReceivedRepresentingAddressType)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10) == 0 { // if not omitted
 		// string "12031"
 		o = append(o, 0xa5, 0x31, 0x32, 0x30, 0x33, 0x31)
 		if z.ReceivedRepresentingEmailAddress == nil {
@@ -7099,7 +8362,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReceivedRepresentingEmailAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20) == 0 { // if not omitted
+		// string "67258"
+		o = append(o, 0xa5, 0x36, 0x37, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ReceivedRepresentingEntryId)
+	}
+	if (zb0001Mask[2] & 0x40) == 0 { // if not omitted
 		// string "6831"
 		o = append(o, 0xa4, 0x36, 0x38, 0x33, 0x31)
 		if z.ReceivedRepresentingName == nil {
@@ -7108,7 +8376,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReceivedRepresentingName)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x80) == 0 { // if not omitted
+		// string "82258"
+		o = append(o, 0xa5, 0x38, 0x32, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.ReceivedRepresentingSearchKey)
+	}
+	if (zb0001Mask[2] & 0x100) == 0 { // if not omitted
 		// string "30933"
 		o = append(o, 0xa5, 0x33, 0x30, 0x39, 0x33, 0x33)
 		if z.RecipientType == nil {
@@ -7117,7 +8390,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.RecipientType)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200) == 0 { // if not omitted
 		// string "310531"
 		o = append(o, 0xa6, 0x33, 0x31, 0x30, 0x35, 0x33, 0x31)
 		if z.RemoteMessageTransferAgent == nil {
@@ -7126,7 +8399,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.RemoteMessageTransferAgent)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x400) == 0 { // if not omitted
 		// string "309511"
 		o = append(o, 0xa6, 0x33, 0x30, 0x39, 0x35, 0x31, 0x31)
 		if z.ReplyRequested == nil {
@@ -7135,7 +8408,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.ReplyRequested)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800) == 0 { // if not omitted
 		// string "12831"
 		o = append(o, 0xa5, 0x31, 0x32, 0x38, 0x33, 0x31)
 		if z.ReportDisposition == nil {
@@ -7144,7 +8417,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReportDisposition)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1000) == 0 { // if not omitted
 		// string "12931"
 		o = append(o, 0xa5, 0x31, 0x32, 0x39, 0x33, 0x31)
 		if z.ReportDispositionMode == nil {
@@ -7153,7 +8426,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReportDispositionMode)
 		}
 	}
-	if (zb0001Mask[1] & 0x10000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x2000) == 0 { // if not omitted
 		// string "2665631"
 		o = append(o, 0xa7, 0x32, 0x36, 0x36, 0x35, 0x36, 0x33, 0x31)
 		if z.ReportingMessageTransferAgent == nil {
@@ -7162,7 +8435,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.ReportingMessageTransferAgent)
 		}
 	}
-	if (zb0001Mask[1] & 0x20000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000) == 0 { // if not omitted
 		// string "1231664"
 		o = append(o, 0xa7, 0x31, 0x32, 0x33, 0x31, 0x36, 0x36, 0x34)
 		if z.RetentionDate == nil {
@@ -7171,7 +8444,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt64(o, *z.RetentionDate)
 		}
 	}
-	if (zb0001Mask[1] & 0x40000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000) == 0 { // if not omitted
 		// string "123173"
 		o = append(o, 0xa6, 0x31, 0x32, 0x33, 0x31, 0x37, 0x33)
 		if z.RetentionFlags == nil {
@@ -7180,7 +8453,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.RetentionFlags)
 		}
 	}
-	if (zb0001Mask[1] & 0x80000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000) == 0 { // if not omitted
 		// string "123143"
 		o = append(o, 0xa6, 0x31, 0x32, 0x33, 0x31, 0x34, 0x33)
 		if z.RetentionPeriod == nil {
@@ -7189,7 +8462,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.RetentionPeriod)
 		}
 	}
-	if (zb0001Mask[1] & 0x100000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000) == 0 { // if not omitted
+		// string "4105258"
+		o = append(o, 0xa7, 0x34, 0x31, 0x30, 0x35, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.RtfCompressed)
+	}
+	if (zb0001Mask[2] & 0x40000) == 0 { // if not omitted
 		// string "361511"
 		o = append(o, 0xa6, 0x33, 0x36, 0x31, 0x35, 0x31, 0x31)
 		if z.RtfInSync == nil {
@@ -7198,7 +8476,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.RtfInSync)
 		}
 	}
-	if (zb0001Mask[1] & 0x200000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x80000) == 0 { // if not omitted
 		// string "310231"
 		o = append(o, 0xa6, 0x33, 0x31, 0x30, 0x32, 0x33, 0x31)
 		if z.SenderAddressType == nil {
@@ -7207,7 +8485,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SenderAddressType)
 		}
 	}
-	if (zb0001Mask[1] & 0x400000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x100000) == 0 { // if not omitted
 		// string "310331"
 		o = append(o, 0xa6, 0x33, 0x31, 0x30, 0x33, 0x33, 0x31)
 		if z.SenderEmailAddress == nil {
@@ -7216,7 +8494,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SenderEmailAddress)
 		}
 	}
-	if (zb0001Mask[1] & 0x800000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200000) == 0 { // if not omitted
+		// string "3097258"
+		o = append(o, 0xa7, 0x33, 0x30, 0x39, 0x37, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.SenderEntryId)
+	}
+	if (zb0001Mask[2] & 0x400000) == 0 { // if not omitted
 		// string "165053"
 		o = append(o, 0xa6, 0x31, 0x36, 0x35, 0x30, 0x35, 0x33)
 		if z.SenderIdStatus == nil {
@@ -7225,7 +8508,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.SenderIdStatus)
 		}
 	}
-	if (zb0001Mask[1] & 0x1000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800000) == 0 { // if not omitted
 		// string "309831"
 		o = append(o, 0xa6, 0x33, 0x30, 0x39, 0x38, 0x33, 0x31)
 		if z.SenderName == nil {
@@ -7234,7 +8517,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SenderName)
 		}
 	}
-	if (zb0001Mask[1] & 0x2000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x1000000) == 0 { // if not omitted
+		// string "3101258"
+		o = append(o, 0xa7, 0x33, 0x31, 0x30, 0x31, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.SenderSearchKey)
+	}
+	if (zb0001Mask[2] & 0x2000000) == 0 { // if not omitted
 		// string "149613"
 		o = append(o, 0xa6, 0x31, 0x34, 0x39, 0x36, 0x31, 0x33)
 		if z.SendInternetEncoding == nil {
@@ -7243,7 +8531,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.SendInternetEncoding)
 		}
 	}
-	if (zb0001Mask[1] & 0x4000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000000) == 0 { // if not omitted
 		// string "1491211"
 		o = append(o, 0xa7, 0x31, 0x34, 0x39, 0x31, 0x32, 0x31, 0x31)
 		if z.SendRichInfo == nil {
@@ -7252,7 +8540,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendBool(o, *z.SendRichInfo)
 		}
 	}
-	if (zb0001Mask[1] & 0x8000000000000000) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000000) == 0 { // if not omitted
 		// string "543"
 		o = append(o, 0xa3, 0x35, 0x34, 0x33)
 		if z.Sensitivity == nil {
@@ -7261,7 +8549,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendInt32(o, *z.Sensitivity)
 		}
 	}
-	if (zb0001Mask[2] & 0x1) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000000) == 0 { // if not omitted
 		// string "10031"
 		o = append(o, 0xa5, 0x31, 0x30, 0x30, 0x33, 0x31)
 		if z.SentRepresentingAddressType == nil {
@@ -7270,7 +8558,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SentRepresentingAddressType)
 		}
 	}
-	if (zb0001Mask[2] & 0x2) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000000) == 0 { // if not omitted
 		// string "10131"
 		o = append(o, 0xa5, 0x31, 0x30, 0x31, 0x33, 0x31)
 		if z.SentRepresentingEmailAddress == nil {
@@ -7279,7 +8567,21 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SentRepresentingEmailAddress)
 		}
 	}
-	if (zb0001Mask[2] & 0x4) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x40000000) == 0 { // if not omitted
+		// string "65258"
+		o = append(o, 0xa5, 0x36, 0x35, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.SentRepresentingEntryId)
+	}
+	if (zb0001Mask[2] & 0x80000000) == 0 { // if not omitted
+		// string "164103"
+		o = append(o, 0xa6, 0x31, 0x36, 0x34, 0x31, 0x30, 0x33)
+		if z.SentRepresentingFlags == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.SentRepresentingFlags)
+		}
+	}
+	if (zb0001Mask[2] & 0x100000000) == 0 { // if not omitted
 		// string "6631"
 		o = append(o, 0xa4, 0x36, 0x36, 0x33, 0x31)
 		if z.SentRepresentingName == nil {
@@ -7288,7 +8590,12 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SentRepresentingName)
 		}
 	}
-	if (zb0001Mask[2] & 0x8) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x200000000) == 0 { // if not omitted
+		// string "59258"
+		o = append(o, 0xa5, 0x35, 0x39, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.SentRepresentingSearchKey)
+	}
+	if (zb0001Mask[2] & 0x400000000) == 0 { // if not omitted
 		// string "1484631"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x34, 0x36, 0x33, 0x31)
 		if z.SmtpAddress == nil {
@@ -7297,7 +8604,21 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SmtpAddress)
 		}
 	}
-	if (zb0001Mask[2] & 0x10) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x800000000) == 0 { // if not omitted
+		// string "12315258"
+		o = append(o, 0xa8, 0x31, 0x32, 0x33, 0x31, 0x35, 0x32, 0x35, 0x38)
+		o = msgp.AppendBytes(o, z.StartDateEtc)
+	}
+	if (zb0001Mask[2] & 0x1000000000) == 0 { // if not omitted
+		// string "133253"
+		o = append(o, 0xa6, 0x31, 0x33, 0x33, 0x32, 0x35, 0x33)
+		if z.StoreSupportMask == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.StoreSupportMask)
+		}
+	}
+	if (zb0001Mask[2] & 0x2000000000) == 0 { // if not omitted
 		// string "5531"
 		o = append(o, 0xa4, 0x35, 0x35, 0x33, 0x31)
 		if z.Subject == nil {
@@ -7306,7 +8627,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.Subject)
 		}
 	}
-	if (zb0001Mask[2] & 0x20) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x4000000000) == 0 { // if not omitted
 		// string "6131"
 		o = append(o, 0xa4, 0x36, 0x31, 0x33, 0x31)
 		if z.SubjectPrefix == nil {
@@ -7315,7 +8636,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SubjectPrefix)
 		}
 	}
-	if (zb0001Mask[2] & 0x40) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x8000000000) == 0 { // if not omitted
 		// string "309931"
 		o = append(o, 0xa6, 0x33, 0x30, 0x39, 0x39, 0x33, 0x31)
 		if z.SupplementaryInfo == nil {
@@ -7324,7 +8645,7 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.SupplementaryInfo)
 		}
 	}
-	if (zb0001Mask[2] & 0x80) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x10000000000) == 0 { // if not omitted
 		// string "1488031"
 		o = append(o, 0xa7, 0x31, 0x34, 0x38, 0x38, 0x30, 0x33, 0x31)
 		if z.TransmittableDisplayName == nil {
@@ -7333,13 +8654,22 @@ func (z *Message) MarshalMsg(b []byte) (o []byte, err error) {
 			o = msgp.AppendString(o, *z.TransmittableDisplayName)
 		}
 	}
-	if (zb0001Mask[2] & 0x100) == 0 { // if not omitted
+	if (zb0001Mask[2] & 0x20000000000) == 0 { // if not omitted
 		// string "12531"
 		o = append(o, 0xa5, 0x31, 0x32, 0x35, 0x33, 0x31)
 		if z.TransportMessageHeaders == nil {
 			o = msgp.AppendNil(o)
 		} else {
 			o = msgp.AppendString(o, *z.TransportMessageHeaders)
+		}
+	}
+	if (zb0001Mask[2] & 0x40000000000) == 0 { // if not omitted
+		// string "286793"
+		o = append(o, 0xa6, 0x32, 0x38, 0x36, 0x37, 0x39, 0x33)
+		if z.ViewDescriptorVersion == nil {
+			o = msgp.AppendNil(o)
+		} else {
+			o = msgp.AppendInt32(o, *z.ViewDescriptorVersion)
 		}
 	}
 	return
@@ -7856,6 +9186,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "12312258":
+			z.ArchiveTag, bts, err = msgp.ReadBytesBytes(bts, z.ArchiveTag)
+			if err != nil {
+				err = msgp.WrapError(err, "ArchiveTag")
+				return
+			}
 		case "1489631":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8026,6 +9362,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "113258":
+			z.ConversationIndex, bts, err = msgp.ReadBytesBytes(bts, z.ConversationIndex)
+			if err != nil {
+				err = msgp.WrapError(err, "ConversationIndex")
+				return
+			}
 		case "11231":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8145,6 +9487,46 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "424164":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.FlagCompleteTime = nil
+			} else {
+				if z.FlagCompleteTime == nil {
+					z.FlagCompleteTime = new(int64)
+				}
+				*z.FlagCompleteTime, bts, err = msgp.ReadInt64Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "FlagCompleteTime")
+					return
+				}
+			}
+		case "42403":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.FlagStatus = nil
+			} else {
+				if z.FlagStatus == nil {
+					z.FlagStatus = new(int32)
+				}
+				*z.FlagStatus, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "FlagStatus")
+					return
+				}
+			}
+		case "4115258":
+			z.Html, bts, err = msgp.ReadBytesBytes(bts, z.Html)
+			if err != nil {
+				err = msgp.WrapError(err, "Html")
+				return
+			}
 		case "42243":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8210,6 +9592,23 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 				*z.InReplyToId, bts, err = msgp.ReadStringBytes(bts)
 				if err != nil {
 					err = msgp.WrapError(err, "InReplyToId")
+					return
+				}
+			}
+		case "163503":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.InternetCodepage = nil
+			} else {
+				if z.InternetCodepage == nil {
+					z.InternetCodepage = new(int32)
+				}
+				*z.InternetCodepage, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "InternetCodepage")
 					return
 				}
 			}
@@ -8332,6 +9731,74 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "416331":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.ListHelp = nil
+			} else {
+				if z.ListHelp == nil {
+					z.ListHelp = new(string)
+				}
+				*z.ListHelp, bts, err = msgp.ReadStringBytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "ListHelp")
+					return
+				}
+			}
+		case "416431":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.ListSubscribe = nil
+			} else {
+				if z.ListSubscribe == nil {
+					z.ListSubscribe = new(string)
+				}
+				*z.ListSubscribe, bts, err = msgp.ReadStringBytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "ListSubscribe")
+					return
+				}
+			}
+		case "416531":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.ListUnsubscribe = nil
+			} else {
+				if z.ListUnsubscribe == nil {
+					z.ListUnsubscribe = new(string)
+				}
+				*z.ListUnsubscribe, bts, err = msgp.ReadStringBytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "ListUnsubscribe")
+					return
+				}
+			}
+		case "262733":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.LocaleId = nil
+			} else {
+				if z.LocaleId == nil {
+					z.LocaleId = new(int32)
+				}
+				*z.LocaleId, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "LocaleId")
+					return
+				}
+			}
 		case "1488731":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8383,6 +9850,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "4088258":
+			z.MappingSignature, bts, err = msgp.ReadBytesBytes(bts, z.MappingSignature)
+			if err != nil {
+				err = msgp.WrapError(err, "MappingSignature")
+				return
+			}
 		case "8811":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8417,6 +9890,23 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "227933":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.MessageEditorFormat = nil
+			} else {
+				if z.MessageEditorFormat == nil {
+					z.MessageEditorFormat = new(int32)
+				}
+				*z.MessageEditorFormat, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "MessageEditorFormat")
+					return
+				}
+			}
 		case "35913":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8448,6 +9938,23 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 				*z.MessageHandlingSystemCommonName, bts, err = msgp.ReadStringBytes(bts)
 				if err != nil {
 					err = msgp.WrapError(err, "MessageHandlingSystemCommonName")
+					return
+				}
+			}
+		case "163693":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.MessageLocaleId = nil
+			} else {
+				if z.MessageLocaleId == nil {
+					z.MessageLocaleId = new(int32)
+				}
+				*z.MessageLocaleId, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "MessageLocaleId")
 					return
 				}
 			}
@@ -8518,6 +10025,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "MessageStatus")
 					return
 				}
+			}
+		case "71258":
+			z.MessageSubmissionId, bts, err = msgp.ReadBytesBytes(bts, z.MessageSubmissionId)
+			if err != nil {
+				err = msgp.WrapError(err, "MessageSubmissionId")
+				return
 			}
 		case "8711":
 			if msgp.IsNil(bts) {
@@ -8689,6 +10202,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "76258":
+			z.OriginalAuthorEntryId, bts, err = msgp.ReadBytesBytes(bts, z.OriginalAuthorEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalAuthorEntryId")
+				return
+			}
 		case "7731":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8774,6 +10293,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "14866258":
+			z.OriginalEntryId, bts, err = msgp.ReadBytesBytes(bts, z.OriginalEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalEntryId")
+				return
+			}
 		case "7531":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8825,6 +10350,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "91258":
+			z.OriginalSenderEntryId, bts, err = msgp.ReadBytesBytes(bts, z.OriginalSenderEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSenderEntryId")
+				return
+			}
 		case "9031":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8841,6 +10372,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "OriginalSenderName")
 					return
 				}
+			}
+		case "92258":
+			z.OriginalSenderSearchKey, bts, err = msgp.ReadBytesBytes(bts, z.OriginalSenderSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSenderSearchKey")
+				return
 			}
 		case "463":
 			if msgp.IsNil(bts) {
@@ -8893,6 +10430,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "94258":
+			z.OriginalSentRepresentingEntryId, bts, err = msgp.ReadBytesBytes(bts, z.OriginalSentRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSentRepresentingEntryId")
+				return
+			}
 		case "9331":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -8909,6 +10452,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "OriginalSentRepresentingName")
 					return
 				}
+			}
+		case "95258":
+			z.OriginalSentRepresentingSearchKey, bts, err = msgp.ReadBytesBytes(bts, z.OriginalSentRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "OriginalSentRepresentingSearchKey")
+				return
 			}
 		case "7331":
 			if msgp.IsNil(bts) {
@@ -9114,6 +10663,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "12313258":
+			z.PolicyTag, bts, err = msgp.ReadBytesBytes(bts, z.PolicyTag)
+			if err != nil {
+				err = msgp.WrapError(err, "PolicyTag")
+				return
+			}
 		case "383":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9182,6 +10737,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "63258":
+			z.ReceivedByEntryId, bts, err = msgp.ReadBytesBytes(bts, z.ReceivedByEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedByEntryId")
+				return
+			}
 		case "6431":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9198,6 +10759,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "ReceivedByName")
 					return
 				}
+			}
+		case "81258":
+			z.ReceivedBySearchKey, bts, err = msgp.ReadBytesBytes(bts, z.ReceivedBySearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedBySearchKey")
+				return
 			}
 		case "11931":
 			if msgp.IsNil(bts) {
@@ -9233,6 +10800,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "67258":
+			z.ReceivedRepresentingEntryId, bts, err = msgp.ReadBytesBytes(bts, z.ReceivedRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedRepresentingEntryId")
+				return
+			}
 		case "6831":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9249,6 +10822,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "ReceivedRepresentingName")
 					return
 				}
+			}
+		case "82258":
+			z.ReceivedRepresentingSearchKey, bts, err = msgp.ReadBytesBytes(bts, z.ReceivedRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "ReceivedRepresentingSearchKey")
+				return
 			}
 		case "30933":
 			if msgp.IsNil(bts) {
@@ -9403,6 +10982,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "4105258":
+			z.RtfCompressed, bts, err = msgp.ReadBytesBytes(bts, z.RtfCompressed)
+			if err != nil {
+				err = msgp.WrapError(err, "RtfCompressed")
+				return
+			}
 		case "361511":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9454,6 +11039,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "3097258":
+			z.SenderEntryId, bts, err = msgp.ReadBytesBytes(bts, z.SenderEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "SenderEntryId")
+				return
+			}
 		case "165053":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9487,6 +11078,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					err = msgp.WrapError(err, "SenderName")
 					return
 				}
+			}
+		case "3101258":
+			z.SenderSearchKey, bts, err = msgp.ReadBytesBytes(bts, z.SenderSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "SenderSearchKey")
+				return
 			}
 		case "149613":
 			if msgp.IsNil(bts) {
@@ -9573,6 +11170,29 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "65258":
+			z.SentRepresentingEntryId, bts, err = msgp.ReadBytesBytes(bts, z.SentRepresentingEntryId)
+			if err != nil {
+				err = msgp.WrapError(err, "SentRepresentingEntryId")
+				return
+			}
+		case "164103":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.SentRepresentingFlags = nil
+			} else {
+				if z.SentRepresentingFlags == nil {
+					z.SentRepresentingFlags = new(int32)
+				}
+				*z.SentRepresentingFlags, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "SentRepresentingFlags")
+					return
+				}
+			}
 		case "6631":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9590,6 +11210,12 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 					return
 				}
 			}
+		case "59258":
+			z.SentRepresentingSearchKey, bts, err = msgp.ReadBytesBytes(bts, z.SentRepresentingSearchKey)
+			if err != nil {
+				err = msgp.WrapError(err, "SentRepresentingSearchKey")
+				return
+			}
 		case "1484631":
 			if msgp.IsNil(bts) {
 				bts, err = msgp.ReadNilBytes(bts)
@@ -9604,6 +11230,29 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 				*z.SmtpAddress, bts, err = msgp.ReadStringBytes(bts)
 				if err != nil {
 					err = msgp.WrapError(err, "SmtpAddress")
+					return
+				}
+			}
+		case "12315258":
+			z.StartDateEtc, bts, err = msgp.ReadBytesBytes(bts, z.StartDateEtc)
+			if err != nil {
+				err = msgp.WrapError(err, "StartDateEtc")
+				return
+			}
+		case "133253":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.StoreSupportMask = nil
+			} else {
+				if z.StoreSupportMask == nil {
+					z.StoreSupportMask = new(int32)
+				}
+				*z.StoreSupportMask, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "StoreSupportMask")
 					return
 				}
 			}
@@ -9689,6 +11338,23 @@ func (z *Message) UnmarshalMsg(bts []byte) (o []byte, err error) {
 				*z.TransportMessageHeaders, bts, err = msgp.ReadStringBytes(bts)
 				if err != nil {
 					err = msgp.WrapError(err, "TransportMessageHeaders")
+					return
+				}
+			}
+		case "286793":
+			if msgp.IsNil(bts) {
+				bts, err = msgp.ReadNilBytes(bts)
+				if err != nil {
+					return
+				}
+				z.ViewDescriptorVersion = nil
+			} else {
+				if z.ViewDescriptorVersion == nil {
+					z.ViewDescriptorVersion = new(int32)
+				}
+				*z.ViewDescriptorVersion, bts, err = msgp.ReadInt32Bytes(bts)
+				if err != nil {
+					err = msgp.WrapError(err, "ViewDescriptorVersion")
 					return
 				}
 			}
@@ -9880,7 +11546,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.Int32Size
 	}
-	s += 8
+	s += 9 + msgp.BytesPrefixSize + len(z.ArchiveTag) + 8
 	if z.Assistant == nil {
 		s += msgp.NilSize
 	} else {
@@ -9940,7 +11606,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.Int32Size
 	}
-	s += 6
+	s += 7 + msgp.BytesPrefixSize + len(z.ConversationIndex) + 6
 	if z.ConversationTopic == nil {
 		s += msgp.NilSize
 	} else {
@@ -9982,7 +11648,19 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.DisplayTo)
 	}
+	s += 7
+	if z.FlagCompleteTime == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int64Size
+	}
 	s += 6
+	if z.FlagStatus == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
+	}
+	s += 8 + msgp.BytesPrefixSize + len(z.Html) + 6
 	if z.IconIndex == nil {
 		s += msgp.NilSize
 	} else {
@@ -10005,6 +11683,12 @@ func (z *Message) Msgsize() (s int) {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.InReplyToId)
+	}
+	s += 7
+	if z.InternetCodepage == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
 	}
 	s += 7
 	if z.InternetMailOverrideFormat == nil {
@@ -10048,6 +11732,30 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.Int64Size
 	}
+	s += 7
+	if z.ListHelp == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.StringPrefixSize + len(*z.ListHelp)
+	}
+	s += 7
+	if z.ListSubscribe == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.StringPrefixSize + len(*z.ListSubscribe)
+	}
+	s += 7
+	if z.ListUnsubscribe == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.StringPrefixSize + len(*z.ListUnsubscribe)
+	}
+	s += 7
+	if z.LocaleId == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
+	}
 	s += 8
 	if z.Locality == nil {
 		s += msgp.NilSize
@@ -10066,7 +11774,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.ManagerName)
 	}
-	s += 5
+	s += 8 + msgp.BytesPrefixSize + len(z.MappingSignature) + 5
 	if z.MessageCcMe == nil {
 		s += msgp.NilSize
 	} else {
@@ -10077,6 +11785,12 @@ func (z *Message) Msgsize() (s int) {
 		s += msgp.NilSize
 	} else {
 		s += msgp.Int64Size
+	}
+	s += 7
+	if z.MessageEditorFormat == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
 	}
 	s += 6
 	if z.MessageFlags == nil {
@@ -10089,6 +11803,12 @@ func (z *Message) Msgsize() (s int) {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.MessageHandlingSystemCommonName)
+	}
+	s += 7
+	if z.MessageLocaleId == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
 	}
 	s += 5
 	if z.MessageRecipientMe == nil {
@@ -10114,7 +11834,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.Int32Size
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.MessageSubmissionId) + 5
 	if z.MessageToMe == nil {
 		s += msgp.NilSize
 	} else {
@@ -10174,7 +11894,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OrganizationalIdNumber)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.OriginalAuthorEntryId) + 5
 	if z.OriginalAuthorName == nil {
 		s += msgp.NilSize
 	} else {
@@ -10204,7 +11924,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OriginalDisplayTo)
 	}
-	s += 5
+	s += 9 + msgp.BytesPrefixSize + len(z.OriginalEntryId) + 5
 	if z.OriginalMessageClass == nil {
 		s += msgp.NilSize
 	} else {
@@ -10222,13 +11942,13 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OriginalSenderEmailAddress)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.OriginalSenderEntryId) + 5
 	if z.OriginalSenderName == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OriginalSenderName)
 	}
-	s += 4
+	s += 6 + msgp.BytesPrefixSize + len(z.OriginalSenderSearchKey) + 4
 	if z.OriginalSensitivity == nil {
 		s += msgp.NilSize
 	} else {
@@ -10246,13 +11966,13 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OriginalSentRepresentingEmailAddress)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.OriginalSentRepresentingEntryId) + 5
 	if z.OriginalSentRepresentingName == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.OriginalSentRepresentingName)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.OriginalSentRepresentingSearchKey) + 5
 	if z.OriginalSubject == nil {
 		s += msgp.NilSize
 	} else {
@@ -10324,7 +12044,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.PagerTelephoneNumber)
 	}
-	s += 4
+	s += 9 + msgp.BytesPrefixSize + len(z.PolicyTag) + 4
 	if z.Priority == nil {
 		s += msgp.NilSize
 	} else {
@@ -10348,13 +12068,13 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.ReceivedByEmailAddress)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.ReceivedByEntryId) + 5
 	if z.ReceivedByName == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.ReceivedByName)
 	}
-	s += 6
+	s += 6 + msgp.BytesPrefixSize + len(z.ReceivedBySearchKey) + 6
 	if z.ReceivedRepresentingAddressType == nil {
 		s += msgp.NilSize
 	} else {
@@ -10366,13 +12086,13 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.ReceivedRepresentingEmailAddress)
 	}
-	s += 5
+	s += 6 + msgp.BytesPrefixSize + len(z.ReceivedRepresentingEntryId) + 5
 	if z.ReceivedRepresentingName == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.ReceivedRepresentingName)
 	}
-	s += 6
+	s += 6 + msgp.BytesPrefixSize + len(z.ReceivedRepresentingSearchKey) + 6
 	if z.RecipientType == nil {
 		s += msgp.NilSize
 	} else {
@@ -10426,7 +12146,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.Int32Size
 	}
-	s += 7
+	s += 8 + msgp.BytesPrefixSize + len(z.RtfCompressed) + 7
 	if z.RtfInSync == nil {
 		s += msgp.NilSize
 	} else {
@@ -10444,7 +12164,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.SenderEmailAddress)
 	}
-	s += 7
+	s += 8 + msgp.BytesPrefixSize + len(z.SenderEntryId) + 7
 	if z.SenderIdStatus == nil {
 		s += msgp.NilSize
 	} else {
@@ -10456,7 +12176,7 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.SenderName)
 	}
-	s += 7
+	s += 8 + msgp.BytesPrefixSize + len(z.SenderSearchKey) + 7
 	if z.SendInternetEncoding == nil {
 		s += msgp.NilSize
 	} else {
@@ -10486,17 +12206,29 @@ func (z *Message) Msgsize() (s int) {
 	} else {
 		s += msgp.StringPrefixSize + len(*z.SentRepresentingEmailAddress)
 	}
+	s += 6 + msgp.BytesPrefixSize + len(z.SentRepresentingEntryId) + 7
+	if z.SentRepresentingFlags == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
+	}
 	s += 5
 	if z.SentRepresentingName == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.SentRepresentingName)
 	}
-	s += 8
+	s += 6 + msgp.BytesPrefixSize + len(z.SentRepresentingSearchKey) + 8
 	if z.SmtpAddress == nil {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.SmtpAddress)
+	}
+	s += 9 + msgp.BytesPrefixSize + len(z.StartDateEtc) + 7
+	if z.StoreSupportMask == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
 	}
 	s += 5
 	if z.Subject == nil {
@@ -10527,6 +12259,12 @@ func (z *Message) Msgsize() (s int) {
 		s += msgp.NilSize
 	} else {
 		s += msgp.StringPrefixSize + len(*z.TransportMessageHeaders)
+	}
+	s += 7
+	if z.ViewDescriptorVersion == nil {
+		s += msgp.NilSize
+	} else {
+		s += msgp.Int32Size
 	}
 	return
 }
