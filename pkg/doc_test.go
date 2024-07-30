@@ -18,13 +18,14 @@ package pst_test
 
 import (
 	"fmt"
-	"github.com/mooijtech/go-pst/v6/pkg"
-	"github.com/mooijtech/go-pst/v6/pkg/properties"
-	"github.com/rotisserie/eris"
-	"golang.org/x/text/encoding"
 	"os"
 	"testing"
 	"time"
+
+	pst "github.com/Anteii/go-pst/v6/pkg"
+	"github.com/Anteii/go-pst/v6/pkg/properties"
+	"github.com/rotisserie/eris"
+	"golang.org/x/text/encoding"
 
 	charsets "github.com/emersion/go-message/charset"
 )

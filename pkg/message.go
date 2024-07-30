@@ -19,7 +19,8 @@ package pst
 import (
 	_ "embed"
 	"fmt"
-	"github.com/mooijtech/go-pst/v6/pkg/properties"
+
+	"github.com/Anteii/go-pst/v6/pkg/properties"
 	"github.com/pkg/errors"
 	"github.com/rotisserie/eris"
 	"github.com/tinylib/msgp/msgp"

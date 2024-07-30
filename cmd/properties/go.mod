@@ -1,4 +1,4 @@
-module github.com/mooijtech/go-pst/generate/properties
+module github.com/Anteii/go-pst/generate/properties
 
 go 1.19
 
