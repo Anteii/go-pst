@@ -21,10 +21,11 @@ import (
 	_ "embed"
 	"encoding/binary"
 	"encoding/csv"
-	"github.com/rotisserie/eris"
-	"github.com/tinylib/msgp/msgp"
 	"io"
 	"strings"
+
+	"github.com/rotisserie/eris"
+	"github.com/tinylib/msgp/msgp"
 )
 
 // PropertyContext represents the property context.
@@ -190,6 +191,10 @@ func (propertyContext *PropertyContext) Populate(decodable msgp.Decodable, local
 
 		if err != nil && !eris.Is(err, ErrPropertyNoData) {
 			return eris.Wrap(err, "failed to get property reader")
+		}
+
+		if mappedID, ok := propertyContext.File.NameToIDMap.IDToName[int(propertyID)]; ok {
+			propertyReader.Property.ID = uint16(mappedID)
 		}
 
 		// TODO - This is a hot-path, optimize this.
