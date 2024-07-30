@@ -485,6 +485,7 @@ var areaNameToProtocolBufferMessageType = map[string]string{
 	"MapiRecipient":                 "Message",
 	"MIME Properties":               "Message",
 	"Address Properties":            "Message",
+	"Miscellaneous Properties":      "Message",
 }
 
 // referenceToProtocolBufferMessageType maps the defining reference prefix to the message type.
